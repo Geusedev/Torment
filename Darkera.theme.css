@@ -23,15 +23,14 @@
   --accent-text: hsl(0 0% 5%); /* Texto sobre fondos de acento */
   --glow-intensity: 1.8; /* Aumentado para más dramatismo */
   --members-width: 280px; /* Ancho de la lista de miembros */
-  --guilds-width: 95px; /* Ancho de la lista de servidores */
+  --guilds-width: 65px; /* Ancho de la lista de servidores */
   --server-icon-size: 46; /* Tamaño de los iconos de servidor */
   --chat-avatar-size: 40px; /* Tamaño de avatares en chat */
-  --opacity: 0.9; /* Opacidad general */
+  --opacity: 0.3; /* Opacidad general */
   --font: "JetBrains Mono", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
 
   /* Colores de la paleta oscura */
   --bg-primary: hsl(240 15% 8%);
-  --bg-secondary: hsl(240 12% 12%);
   --bg-tertiary: hsl(240 10% 16%);
   --text-primary: hsl(0 0% 95%);
   --text-secondary: hsl(0 0% 75%);
