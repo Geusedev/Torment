@@ -1,24 +1,25 @@
 /**
- * @name Geuse
- * @author Tu Nombre
- * @version 2.0.0
- * @description Un tema oscuro y elegante para Discord con acentos púrpura y animaciones suaves.
- * @source https://github.com/tu-usuario/Geuse
+ * @name SORRY ESTOY EN MI DARKERA
+ * @author Geuse
+ * @version 2.1.0
+ * @description HASTA K CHOKE
+ * @source https://github.com/Geusedev/Torment
  * @invite TuInvite
-*/
+ */
 
-@import url('https://raw.githubusercontent.com/Geusedev/Torment/refs/heads/main/Geuse.css');
+@import url("./Geuse.css");
 
-/* Google Fonts */
+/* Google Fonts - usando solo fuentes web seguras para evitar bloqueos */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 :root {
   /*
-   * Geuse variables - Paleta Oscura con Púrpura
+   * Geuse variables - Paleta Oscura con Púrpura (Compatible con Vencord)
    */
-  --background-image: url("https://i.imgur.com/your-dark-bg.png"); /* Imagen de fondo oscura | URL DEBE SER DIRECTA */
-  --background-blur: 2px; /* Desenfoque de la imagen de fondo */
+  /* REMOVIDO: --background-image para evitar recursos bloqueados */
+  /* En su lugar, usamos un gradiente CSS puro */
+  --background-gradient: radial-gradient(ellipse at top, hsl(270 30% 8%) 0%, hsl(240 20% 4%) 50%, hsl(220 25% 2%) 100%);
+  --background-blur: 0px; /* Sin blur ya que no hay imagen externa */
   --accent: hsl(270 100% 65%); /* Púrpura vibrante como color principal */
   --accent-dark: hsl(270 80% 45%); /* Púrpura más oscuro para variaciones */
   --accent-text: hsl(0 0% 5%); /* Texto sobre fondos de acento */
@@ -28,9 +29,8 @@
   --server-icon-size: 46; /* Tamaño de los iconos de servidor */
   --chat-avatar-size: 40px; /* Tamaño de avatares en chat */
   --opacity: 0.9; /* Opacidad general - ligeramente más opaco */
-  --font: "Inter"; /* Fuente principal */
-  --font-mono: "JetBrains Mono"; /* Fuente monoespaciada para código */
-  
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Fuente con fallbacks seguros */
+
   /* Colores de la paleta oscura */
   --bg-primary: hsl(240 15% 8%); /* Negro azulado muy oscuro */
   --bg-secondary: hsl(240 12% 12%); /* Gris muy oscuro */
@@ -38,7 +38,7 @@
   --text-primary: hsl(0 0% 95%); /* Blanco casi puro */
   --text-secondary: hsl(0 0% 75%); /* Gris claro */
   --text-muted: hsl(0 0% 55%); /* Gris medio */
-  
+
   /*
    * RadialStatus variables - Colores púrpura oscuros
    */
@@ -48,7 +48,7 @@
   --rs-small-width: 2px; /* Aumentado para mejor visibilidad */
   --rs-medium-width: 2.5px;
   --rs-large-width: 3px;
-  
+
   /* Colores de estado personalizados */
   --rs-online-color: hsl(270 100% 70%); /* Púrpura brillante para online */
   --rs-idle-color: hsl(45 100% 65%); /* Amarillo dorado para idle */
@@ -59,7 +59,7 @@
   --rs-phone-color: var(--rs-online-color);
   --rs-phone-visible: block;
   --rs-self-speaking-colour: hsl(270 100% 75%); /* Púrpura para cuando hablas */
-  
+
   /* Variables de animación mejoradas */
   --animation-speed-fast: 0.2s;
   --animation-speed-normal: 0.3s;
