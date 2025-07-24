@@ -8,7 +8,7 @@
   --rs-medium-width: 2.5px;
   --rs-large-width: 3px;
   --rs-avatar-shape: var(--avatar-roundness, 50%);
-  
+
   /* Colores de estado mejorados */
   --rs-online-color: hsl(270 100% 70%);
   --rs-idle-color: hsl(45 100% 65%);
@@ -21,101 +21,116 @@
 }
 
 /* Efectos de glow mejorados para avatares */
-.wrapper__44b0c[aria-label*=Online i], .wrapper__44b0c[aria-label*=online i], .wrapper__44b0c[aria-label*=Conectado i], .wrapper__44b0c[aria-label*="En línea con móvil" i], .wrapper__44b0c[aria-label*="En ligne" i], .wrapper__44b0c[aria-label*="Na mreži" i],
-.avatarWrapper[data-status=online] .wrapper__44b0c {
-  box-shadow: 
-    0 0 calc(var(--glow-intensity) * 15px) hsl(270 100% 70% / 0.4),
-    0 0 calc(var(--glow-intensity) * 30px) hsl(270 100% 70% / 0.2),
-    0 0 calc(var(--glow-intensity) * 45px) hsl(270 100% 70% / 0.1);
+.wrapper__44b0c[aria-label*="Online" i],
+.wrapper__44b0c[aria-label*="online" i],
+.wrapper__44b0c[aria-label*="Conectado" i],
+.wrapper__44b0c[aria-label*="En línea con móvil" i],
+.wrapper__44b0c[aria-label*="En ligne" i],
+.wrapper__44b0c[aria-label*="Na mreži" i],
+.avatarWrapper[data-status="online"] .wrapper__44b0c {
+  box-shadow: 0 0 calc(var(--glow-intensity) * 15px) hsl(270 100% 70% / 0.4), 0 0 calc(var(--glow-intensity) * 30px)
+    hsl(270 100% 70% / 0.2), 0 0 calc(var(--glow-intensity) * 45px) hsl(270 100% 70% / 0.1);
   animation: avatar-glow-online 3s infinite ease-in-out;
 }
 
-.wrapper__44b0c[aria-label*=Idle i], .wrapper__44b0c[aria-label*=Inaktiv i], .wrapper__44b0c[aria-label*=Abwesend i], .wrapper__44b0c[aria-label*=Ausente i], .wrapper__44b0c[aria-label*=Inactif i], .wrapper__44b0c[aria-label*="U mirovanju" i],
-.avatarWrapper[data-status=idle] .wrapper__44b0c {
-  box-shadow: 
-    0 0 calc(var(--glow-intensity) * 12px) hsl(45 100% 65% / 0.4),
-    0 0 calc(var(--glow-intensity) * 25px) hsl(45 100% 65% / 0.2);
+.wrapper__44b0c[aria-label*="Idle" i],
+.wrapper__44b0c[aria-label*="Inaktiv" i],
+.wrapper__44b0c[aria-label*="Abwesend" i],
+.wrapper__44b0c[aria-label*="Ausente" i],
+.wrapper__44b0c[aria-label*="Inactif" i],
+.wrapper__44b0c[aria-label*="U mirovanju" i],
+.avatarWrapper[data-status="idle"] .wrapper__44b0c {
+  box-shadow: 0 0 calc(var(--glow-intensity) * 12px) hsl(45 100% 65% / 0.4), 0 0 calc(var(--glow-intensity) * 25px)
+    hsl(45 100% 65% / 0.2);
   animation: avatar-glow-idle 4s infinite ease-in-out;
 }
 
-.wrapper__44b0c[aria-label*="Do Not disturb" i], .wrapper__44b0c[aria-label*="Vil ikke forstyrres" i], .wrapper__44b0c[aria-label*="Bitte nicht stören" i], .wrapper__44b0c[aria-label*="No molestar" i], .wrapper__44b0c[aria-label*="Ne pas déranger" i], .wrapper__44b0c[aria-label*="Ne uznemiravaj" i],
-.avatarWrapper[data-status=dnd] .wrapper__44b0c {
-  box-shadow: 
-    0 0 calc(var(--glow-intensity) * 10px) hsl(0 85% 65% / 0.5),
-    0 0 calc(var(--glow-intensity) * 20px) hsl(0 85% 65% / 0.3);
+.wrapper__44b0c[aria-label*="Do Not disturb" i],
+.wrapper__44b0c[aria-label*="Vil ikke forstyrres" i],
+.wrapper__44b0c[aria-label*="Bitte nicht stören" i],
+.wrapper__44b0c[aria-label*="No molestar" i],
+.wrapper__44b0c[aria-label*="Ne pas déranger" i],
+.wrapper__44b0c[aria-label*="Ne uznemiravaj" i],
+.avatarWrapper[data-status="dnd"] .wrapper__44b0c {
+  box-shadow: 0 0 calc(var(--glow-intensity) * 10px) hsl(0 85% 65% / 0.5), 0 0 calc(var(--glow-intensity) * 20px)
+    hsl(0 85% 65% / 0.3);
   animation: avatar-glow-dnd 2s infinite ease-in-out;
 }
 
-.wrapper__44b0c[aria-label*=Streaming i], .wrapper__44b0c[aria-label*=Streamer i], .wrapper__44b0c[aria-label*=Streamt i], .wrapper__44b0c[aria-label*=Transmitiendo i], .wrapper__44b0c[aria-label*="En direct" i],
-.avatarWrapper[data-status=streaming] .wrapper__44b0c {
-  box-shadow: 
-    0 0 calc(var(--glow-intensity) * 18px) hsl(280 100% 75% / 0.5),
-    0 0 calc(var(--glow-intensity) * 35px) hsl(280 100% 75% / 0.3);
+.wrapper__44b0c[aria-label*="Streaming" i],
+.wrapper__44b0c[aria-label*="Streamer" i],
+.wrapper__44b0c[aria-label*="Streamt" i],
+.wrapper__44b0c[aria-label*="Transmitiendo" i],
+.wrapper__44b0c[aria-label*="En direct" i],
+.avatarWrapper[data-status="streaming"] .wrapper__44b0c {
+  box-shadow: 0 0 calc(var(--glow-intensity) * 18px) hsl(280 100% 75% / 0.5), 0 0 calc(var(--glow-intensity) * 35px)
+    hsl(280 100% 75% / 0.3);
   animation: avatar-glow-streaming 1.5s infinite ease-in-out;
 }
 
-.wrapper__44b0c[aria-label*=Invisible i], .wrapper__44b0c[aria-label*=Usynlig i], .wrapper__44b0c[aria-label*=Unsichtbar i], .wrapper__44b0c[aria-label*="Nevidljiv/a" i],
-.avatarWrapper[data-status=invisible] .wrapper__44b0c {
+.wrapper__44b0c[aria-label*="Invisible" i],
+.wrapper__44b0c[aria-label*="Usynlig" i],
+.wrapper__44b0c[aria-label*="Unsichtbar" i],
+.wrapper__44b0c[aria-label*="Nevidljiv/a" i],
+.avatarWrapper[data-status="invisible"] .wrapper__44b0c {
   box-shadow: 0 0 calc(var(--glow-intensity) * 8px) hsl(240 6% 50% / 0.3);
 }
 
-.wrapper__44b0c[aria-label*=Offline i], .wrapper__44b0c[aria-label*=Desconectado i], .wrapper__44b0c[aria-label*="Hors ligne" i], .wrapper__44b0c[aria-label*="Izvan mreže" i],
-.avatarWrapper[data-status=offline] .wrapper__44b0c {
+.wrapper__44b0c[aria-label*="Offline" i],
+.wrapper__44b0c[aria-label*="Desconectado" i],
+.wrapper__44b0c[aria-label*="Hors ligne" i],
+.wrapper__44b0c[aria-label*="Izvan mreže" i],
+.avatarWrapper[data-status="offline"] .wrapper__44b0c {
   box-shadow: 0 0 calc(var(--glow-intensity) * 5px) hsl(240 8% 45% / 0.2);
 }
 
 /* Animaciones de glow para avatares */
 @keyframes avatar-glow-online {
-  0%, 100% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 15px) hsl(270 100% 70% / 0.4),
-      0 0 calc(var(--glow-intensity) * 30px) hsl(270 100% 70% / 0.2);
+  0%,
+  100% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 15px) hsl(270 100% 70% / 0.4), 0 0 calc(var(--glow-intensity) * 30px)
+      hsl(270 100% 70% / 0.2);
   }
-  50% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 20px) hsl(270 100% 70% / 0.6),
-      0 0 calc(var(--glow-intensity) * 40px) hsl(270 100% 70% / 0.3);
+  50% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 20px) hsl(270 100% 70% / 0.6), 0 0 calc(var(--glow-intensity) * 40px)
+      hsl(270 100% 70% / 0.3);
   }
 }
 
 @keyframes avatar-glow-idle {
-  0%, 100% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 12px) hsl(45 100% 65% / 0.3);
+  0%,
+  100% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 12px) hsl(45 100% 65% / 0.3);
   }
-  25%, 75% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 16px) hsl(45 100% 65% / 0.4);
+  25%,
+  75% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 16px) hsl(45 100% 65% / 0.4);
   }
-  50% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 20px) hsl(45 100% 65% / 0.5);
+  50% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 20px) hsl(45 100% 65% / 0.5);
   }
 }
 
 @keyframes avatar-glow-dnd {
-  0%, 100% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 10px) hsl(0 85% 65% / 0.4);
+  0%,
+  100% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 10px) hsl(0 85% 65% / 0.4);
   }
-  50% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 15px) hsl(0 85% 65% / 0.6);
+  50% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 15px) hsl(0 85% 65% / 0.6);
   }
 }
 
 @keyframes avatar-glow-streaming {
-  0%, 100% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 18px) hsl(280 100% 75% / 0.4);
+  0%,
+  100% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 18px) hsl(280 100% 75% / 0.4);
   }
-  33% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 25px) hsl(280 100% 75% / 0.6);
+  33% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 25px) hsl(280 100% 75% / 0.6);
   }
-  66% { 
-    box-shadow: 
-      0 0 calc(var(--glow-intensity) * 22px) hsl(280 100% 75% / 0.5);
+  66% {
+    box-shadow: 0 0 calc(var(--glow-intensity) * 22px) hsl(280 100% 75% / 0.5);
   }
 }
 
@@ -134,7 +149,7 @@
 
 /* Variables del tema principal */
 :root {
-  --geuse-version: "2.0.0";
+  --geuse-version: "2.2.0";
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -178,7 +193,7 @@
   --background-mentioned: var(--accent);
   --background-message-hover: hsl(270 30% 15% / 0.3) !important;
   --guildbar-folder-size: var(--server-size);
-  
+
   /* Colores de servidor mejorados */
   --server-unread-colour: hsl(270 100% 80%);
   --server-hover-colour: hsl(270 80% 70%);
@@ -186,22 +201,77 @@
   --server-spacing: 18px;
   --server-glow-intensity: var(--glow-intensity, 1.5);
   --server-ring-offset: 8px;
+
+  /* Variables para el gif de fondo */
+  --chat-bg-gif: url("https://raw.githubusercontent.com/Geusedev/Torment/refs/heads/main/AFC_PARA_GIF_f9da2f62-a964-4f2d-a2db-e3f210034619.webp");
+  --gif-size: 400px;
+  --gif-opacity: 0.15;
+  --bloom-intensity: 2;
 }
 
 /* Animaciones globales mejoradas */
 @keyframes smooth-fade-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes gentle-bounce {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { filter: brightness(1) drop-shadow(0 0 5px currentColor); }
-  50% { filter: brightness(1.2) drop-shadow(0 0 15px currentColor); }
+  0%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 5px currentColor);
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 15px currentColor);
+  }
+}
+
+@keyframes gif-bloom {
+  0%,
+  100% {
+    filter: blur(0px) brightness(1) saturate(1.2);
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    filter: blur(1px) brightness(1.1) saturate(1.4);
+    transform: scale(1.02) rotate(0.5deg);
+  }
+  50% {
+    filter: blur(2px) brightness(1.2) saturate(1.6);
+    transform: scale(1.05) rotate(0deg);
+  }
+  75% {
+    filter: blur(1px) brightness(1.1) saturate(1.4);
+    transform: scale(1.02) rotate(-0.5deg);
+  }
+}
+
+@keyframes gif-float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-5px) translateX(2px);
+  }
+  66% {
+    transform: translateY(3px) translateX(-2px);
+  }
 }
 
 /* Barra superior */
@@ -210,22 +280,25 @@
   border-bottom: 1px solid var(--bg-border);
 }
 
-/* Fondo principal */
-html, span:not([class*=spinner_]):not([class*=spinnerItem]) {
+/* Fondo principal - USANDO GRADIENTE CSS EN LUGAR DE IMAGEN EXTERNA */
+html,
+span:not([class*="spinner_"]):not([class*="spinnerItem"]) {
   backface-visibility: hidden;
 }
 
-body, #app-mount, .app__160d8 {
+body,
+#app-mount,
+.app__160d8 {
   background: transparent;
 }
 
 #app-mount .bg__960e4 {
-  background-image: var(--background-image);
-  background-color: hsl(240 20% 5%);
-  background-attachment: var(--background-attachment, fixed);
-  background-size: var(--background-size, cover);
-  background-position: var(--background-position, center);
-  filter: blur(var(--background-blur, 2px)) hue-rotate(var(--background-hue, 0deg)) brightness(0.7);
+  /* CAMBIADO: Usando gradiente CSS en lugar de imagen externa */
+  background: var(--background-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  /* Removido filter con blur ya que no hay imagen externa */
 }
 
 .content_c48ade::before {
@@ -263,7 +336,7 @@ body, #app-mount, .app__160d8 {
 
 /* Información del tema */
 #app-mount .info__2debe .line__2debe:last-of-type:after {
-  content: "Geuse " var(--geuse-version);
+  content: "Geuse " var(--geuse-version) " - Vencord Compatible";
   display: block;
   text-transform: none;
   color: var(--accent);
@@ -298,11 +371,11 @@ body, #app-mount, .app__160d8 {
 #app-mount .folderGroup__48112 {
   --server-folder-offset: 8px;
 }
-#app-mount .folderGroup__48112 ul.stack_dbd263[role=group] {
+#app-mount .folderGroup__48112 ul.stack_dbd263[role="group"] {
   height: auto !important;
   overflow: visible !important;
 }
-#app-mount .folderGroup__48112 ul.stack_dbd263[role=group] .listItem__650eb {
+#app-mount .folderGroup__48112 ul.stack_dbd263[role="group"] .listItem__650eb {
   --server-folder-offset: 0px;
 }
 #app-mount .scroller_ef3116 > div[style]:not([class]) {
@@ -318,9 +391,11 @@ body, #app-mount, .app__160d8 {
   transform: translateX(5px);
 }
 
-#app-mount .listItem__650eb [class*=pill] {
+#app-mount .listItem__650eb [class*="pill"] {
   --__ring-size: calc(
-    ((var(--server-icon-size, 45) * 1px) - 5px) + var(--server-folder-offset, 0px) + var(--server-ring-offset)
+    ((var(--server-icon-size, 45) * 1px) - 5px) +
+    var(--server-folder-offset, 0px) +
+    var(--server-ring-offset)
   );
   left: 50%;
   top: 50%;
@@ -331,7 +406,7 @@ body, #app-mount, .app__160d8 {
   margin-left: -2px;
 }
 
-#app-mount .listItem__650eb [class*=pill] .item__58105 {
+#app-mount .listItem__650eb [class*="pill"] .item__58105 {
   height: 100% !important;
   width: 100%;
   margin: 0;
@@ -345,43 +420,45 @@ body, #app-mount, .app__160d8 {
 }
 
 /* Estados de servidor con efectos de glow mejorados */
-#app-mount .listItem__650eb [class*=pill] span[style*="height: 0"] {
-  box-shadow: 
-    0 0 calc(var(--server-glow-intensity) * 20px) calc(var(--server-glow-intensity) * 8px) hsl(from var(--server-unread-colour) h s l/0.4),
-    0 0 calc(var(--server-glow-intensity) * 40px) calc(var(--server-glow-intensity) * 15px) hsl(from var(--server-unread-colour) h s l/0.2);
+#app-mount .listItem__650eb [class*="pill"] span[style*="height: 0"] {
+  box-shadow: 0 0 calc(var(--server-glow-intensity) * 20px) calc(var(--server-glow-intensity) * 8px)
+    hsl(from var(--server-unread-colour) h s l / 0.4), 0 0 calc(var(--server-glow-intensity) * 40px)
+    calc(var(--server-glow-intensity) * 15px) hsl(from var(--server-unread-colour) h s l / 0.2);
   border-color: hsl(from var(--server-unread-colour) h s l);
   animation: server-unread-pulse 2s infinite ease-in-out;
 }
 
 @keyframes server-unread-pulse {
-  0%, 100% { 
-    box-shadow: 
-      0 0 calc(var(--server-glow-intensity) * 15px) calc(var(--server-glow-intensity) * 5px) hsl(from var(--server-unread-colour) h s l/0.3);
+  0%,
+  100% {
+    box-shadow: 0 0 calc(var(--server-glow-intensity) * 15px) calc(var(--server-glow-intensity) * 5px)
+      hsl(from var(--server-unread-colour) h s l / 0.3);
   }
-  50% { 
-    box-shadow: 
-      0 0 calc(var(--server-glow-intensity) * 25px) calc(var(--server-glow-intensity) * 10px) hsl(from var(--server-unread-colour) h s l/0.5);
+  50% {
+    box-shadow: 0 0 calc(var(--server-glow-intensity) * 25px) calc(var(--server-glow-intensity) * 10px)
+      hsl(from var(--server-unread-colour) h s l / 0.5);
   }
 }
 
-/* Continúa con más estados de servidor... */
-#app-mount .listItem__650eb [class*=pill] span[style*="height: 21"] {
+/* Servidor seleccionado */
+#app-mount .listItem__650eb [class*="pill"] span[style*="height: 21"] {
   transform: scale(1) !important;
   border-color: hsl(from var(--server-selected-colour) h s l);
-  box-shadow: 
-    0 0 calc(var(--server-glow-intensity) * 25px) calc(var(--server-glow-intensity) * 10px) hsl(from var(--server-selected-colour) h s l/0.4),
-    0 0 calc(var(--server-glow-intensity) * 50px) calc(var(--server-glow-intensity) * 20px) hsl(from var(--server-selected-colour) h s l/0.2);
+  box-shadow: 0 0 calc(var(--server-glow-intensity) * 25px) calc(var(--server-glow-intensity) * 10px)
+    hsl(from var(--server-selected-colour) h s l / 0.4), 0 0 calc(var(--server-glow-intensity) * 50px)
+    calc(var(--server-glow-intensity) * 20px) hsl(from var(--server-selected-colour) h s l / 0.2);
   animation: server-selected-glow 3s infinite ease-in-out;
 }
 
 @keyframes server-selected-glow {
-  0%, 100% { 
-    box-shadow: 
-      0 0 calc(var(--server-glow-intensity) * 20px) calc(var(--server-glow-intensity) * 8px) hsl(from var(--server-selected-colour) h s l/0.3);
+  0%,
+  100% {
+    box-shadow: 0 0 calc(var(--server-glow-intensity) * 20px) calc(var(--server-glow-intensity) * 8px)
+      hsl(from var(--server-selected-colour) h s l / 0.3);
   }
-  50% { 
-    box-shadow: 
-      0 0 calc(var(--server-glow-intensity) * 30px) calc(var(--server-glow-intensity) * 12px) hsl(from var(--server-selected-colour) h s l/0.5);
+  50% {
+    box-shadow: 0 0 calc(var(--server-glow-intensity) * 30px) calc(var(--server-glow-intensity) * 12px)
+      hsl(from var(--server-selected-colour) h s l / 0.5);
   }
 }
 
@@ -404,7 +481,7 @@ body, #app-mount, .app__160d8 {
 #app-mount .svg_cc5dd2 foreignObject {
   border-radius: 50%;
   -webkit-mask: none !important;
-          mask: none !important;
+  mask: none !important;
   transition: var(--transition);
 }
 
@@ -412,19 +489,21 @@ body, #app-mount, .app__160d8 {
   display: none;
 }
 
-/* Resto del CSS con mejoras similares... */
-/* Por brevedad, incluyo solo las partes más importantes. El archivo completo tendría todas las secciones del original con las mejoras aplicadas */
-
 /* Canales con efectos mejorados */
 #app-mount .wrapper__2ea32.modeSelected__2ea32 .link__2ea32 {
-  background: hsl(from var(--accent) h s l/0.15);
+  background: hsl(from var(--accent) h s l / 0.15);
   backdrop-filter: blur(10px);
   animation: channel-selected-glow 2s infinite ease-in-out;
 }
 
 @keyframes channel-selected-glow {
-  0%, 100% { background: hsl(from var(--accent) h s l/0.1); }
-  50% { background: hsl(from var(--accent) h s l/0.2); }
+  0%,
+  100% {
+    background: hsl(from var(--accent) h s l / 0.1);
+  }
+  50% {
+    background: hsl(from var(--accent) h s l / 0.2);
+  }
 }
 
 #app-mount .wrapper__2ea32.modeSelected__2ea32 .link__2ea32::before {
@@ -435,20 +514,21 @@ body, #app-mount, .app__160d8 {
   width: var(--channel-pill-width);
   top: 0;
   background: var(--accent);
-  box-shadow: 
-    0 0 calc(var(--channel-glow-intensity) * 20px) calc(var(--channel-glow-intensity) * 8px) hsl(from var(--accent) h s l/0.4),
-    0 0 calc(var(--channel-glow-intensity) * 40px) calc(var(--channel-glow-intensity) * 15px) hsl(from var(--accent) h s l/0.2);
+  box-shadow: 0 0 calc(var(--channel-glow-intensity) * 20px) calc(var(--channel-glow-intensity) * 8px)
+    hsl(from var(--accent) h s l / 0.4), 0 0 calc(var(--channel-glow-intensity) * 40px)
+    calc(var(--channel-glow-intensity) * 15px) hsl(from var(--accent) h s l / 0.2);
   animation: channel-pill-pulse 3s infinite ease-in-out;
 }
 
 @keyframes channel-pill-pulse {
-  0%, 100% { 
-    box-shadow: 
-      0 0 calc(var(--channel-glow-intensity) * 15px) calc(var(--channel-glow-intensity) * 5px) hsl(from var(--accent) h s l/0.3);
+  0%,
+  100% {
+    box-shadow: 0 0 calc(var(--channel-glow-intensity) * 15px) calc(var(--channel-glow-intensity) * 5px)
+      hsl(from var(--accent) h s l / 0.3);
   }
-  50% { 
-    box-shadow: 
-      0 0 calc(var(--channel-glow-intensity) * 25px) calc(var(--channel-glow-intensity) * 10px) hsl(from var(--accent) h s l/0.5);
+  50% {
+    box-shadow: 0 0 calc(var(--channel-glow-intensity) * 25px) calc(var(--channel-glow-intensity) * 10px)
+      hsl(from var(--accent) h s l / 0.5);
   }
 }
 
@@ -456,19 +536,655 @@ body, #app-mount, .app__160d8 {
 #app-mount .channelTextArea_f75fb0:focus-within,
 #app-mount .channelTextArea__5126c:focus-within {
   border-color: hsl(from var(--accent) h s l);
-  box-shadow: 
-    0 0 calc(var(--input-glow-intensity) * 25px) calc(var(--input-glow-intensity) * 8px) hsl(from var(--accent) h s l/0.3),
-    0 0 calc(var(--input-glow-intensity) * 50px) calc(var(--input-glow-intensity) * 15px) hsl(from var(--accent) h s l/0.1);
+  box-shadow: 0 0 calc(var(--input-glow-intensity) * 25px) calc(var(--input-glow-intensity) * 8px)
+    hsl(from var(--accent) h s l / 0.3), 0 0 calc(var(--input-glow-intensity) * 50px)
+    calc(var(--input-glow-intensity) * 15px) hsl(from var(--accent) h s l / 0.1);
   animation: input-focus-glow 2s infinite ease-in-out;
 }
 
 @keyframes input-focus-glow {
-  0%, 100% { 
-    box-shadow: 
-      0 0 calc(var(--input-glow-intensity) * 20px) calc(var(--input-glow-intensity) * 5px) hsl(from var(--accent) h s l/0.25);
+  0%,
+  100% {
+    box-shadow: 0 0 calc(var(--input-glow-intensity) * 20px) calc(var(--input-glow-intensity) * 5px)
+      hsl(from var(--accent) h s l / 0.25);
   }
-  50% { 
-    box-shadow: 
-      0 0 calc(var(--input-glow-intensity) * 30px) calc(var(--input-glow-intensity) * 10px) hsl(from var(--accent) h s l/0.35);
+  50% {
+    box-shadow: 0 0 calc(var(--input-glow-intensity) * 30px) calc(var(--input-glow-intensity) * 10px)
+      hsl(from var(--accent) h s l / 0.35);
   }
 }
+
+/* Resto de estilos básicos para compatibilidad */
+#app-mount div.stack_dbd263:not([role="group"]) {
+  gap: 0 !important;
+}
+#app-mount .guildSeparator__252b6 {
+  background: var(--bg-border);
+}
+#app-mount .itemsContainer_ef3116 > div.stack_dbd263 {
+  padding-top: var(--server-spacing, 16px);
+}
+#app-mount .unreadMentionsIndicatorBottom_ef3116,
+#app-mount .unreadMentionsIndicatorTop_ef3116 {
+  width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2);
+  padding: calc(var(--custom-guild-list-padding) / 2);
+}
+
+/* Sidebar y paneles */
+#app-mount .header_f37cb1 {
+  height: var(--toolbar-height);
+  border-bottom: 1px solid var(--bg-border);
+}
+
+#app-mount .sidebar_c48ade {
+  border-radius: 0;
+}
+#app-mount .sidebar_c48ade::after {
+  content: none;
+}
+#app-mount .sidebar_c48ade .scroller__629e4::-webkit-scrollbar {
+  display: none;
+}
+#app-mount .sidebarList_c48ade {
+  border-radius: 0;
+  border: none;
+  padding-bottom: 0;
+  margin-bottom: var(--custom-app-panels-height);
+}
+#app-mount .container__2637a {
+  background: var(--bg-primary);
+  padding-bottom: 0;
+}
+#app-mount .privateChannels__35e86 {
+  background: var(--bg-primary);
+}
+#app-mount .privateChannels__35e86 .scroller__99e7c {
+  background: transparent;
+  margin-bottom: 0;
+}
+#app-mount .privateChannels__35e86 .scroller__99e7c::-webkit-scrollbar {
+  display: none;
+}
+#app-mount .sectionDivider__35e86 {
+  background: var(--bg-border);
+  margin: 0;
+}
+#app-mount .content__99f8c > div[aria-hidden="true"]:first-child {
+  display: none;
+}
+
+/* Paneles inferiores */
+#app-mount .panels_c48ade {
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--bg-border);
+  background: var(--bg-primary);
+}
+#app-mount .activityPanel_c48ade {
+  background: transparent;
+  border-bottom: 1px solid var(--bg-border);
+}
+#app-mount .container_e131a9 {
+  padding: var(--space-md);
+  margin: 0;
+  border-color: var(--bg-border);
+}
+#app-mount .container__37e49 {
+  padding: var(--space-md);
+}
+
+/* ===== ÁREA DE CHAT CON GIF DE FONDO Y BLOOM ===== */
+
+/* Chat principal con transparencia mejorada */
+#app-mount .chat_f75fb0 {
+  background: transparent;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+#app-mount .chat_f75fb0::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--gif-size);
+  height: var(--gif-size);
+  background-image: var(--chat-bg-gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  opacity: var(--gif-opacity);
+  z-index: 0;
+  pointer-events: none;
+  animation: gif-float 8s infinite ease-in-out;
+}
+
+/* Efecto de bloom múltiple alrededor del gif */
+#app-mount .chat_f75fb0::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--gif-size) * 1.5);
+  height: calc(var(--gif-size) * 1.5);
+  background-image: var(--chat-bg-gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  opacity: calc(var(--gif-opacity) * 0.3);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(20px) brightness(1.5) saturate(2);
+  animation: gif-bloom 6s infinite ease-in-out;
+}
+
+/* Capas adicionales de bloom */
+#app-mount .chatContent_f75fb0 {
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--bg-border);
+  position: relative;
+  z-index: 1;
+}
+
+#app-mount .chatContent_f75fb0::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--gif-size) * 2);
+  height: calc(var(--gif-size) * 2);
+  background: radial-gradient(
+    circle,
+    hsl(270 100% 65% / 0.05) 0%,
+    hsl(280 100% 70% / 0.03) 30%,
+    hsl(260 100% 60% / 0.02) 60%,
+    transparent 100%
+  );
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+  animation: gif-bloom 10s infinite ease-in-out reverse;
+}
+
+#app-mount .chat_f75fb0 ol.scrollerInner__36d07 {
+  padding-bottom: var(--chat-bottom-spacing);
+  position: relative;
+  z-index: 2;
+}
+
+/* Mensajes con transparencia mejorada */
+#app-mount .message__5126c {
+  background: hsl(240 15% 10% / 0.4) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  margin: 4px 16px;
+  padding: 8px 12px;
+  border: 1px solid hsl(270 50% 50% / 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#app-mount .message__5126c:hover {
+  background: hsl(240 15% 12% / 0.6) !important;
+  border-color: hsl(270 50% 50% / 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px hsl(270 100% 65% / 0.1);
+}
+
+/* Mensajes mencionados */
+#app-mount .message__5126c.mentioned__5126c {
+  background: hsl(270 100% 65% / 0.1) !important;
+  border-color: hsl(270 100% 65% / 0.3);
+  box-shadow: 0 0 20px hsl(270 100% 65% / 0.2);
+}
+
+#app-mount .message__5126c.mentioned__5126c::before {
+  background: hsl(270 100% 65%);
+  box-shadow: 0 0 10px hsl(270 100% 65% / 0.5);
+}
+
+#app-mount .message__5126c.mentioned__5126c:hover {
+  background: hsl(270 100% 65% / 0.15) !important;
+  box-shadow: 0 0 25px hsl(270 100% 65% / 0.3);
+}
+
+/* Burbujas de chat mejoradas */
+#app-mount .cozyMessage__5126c .messageContent_c19a55:not(.repliedTextContent_c19a55):not(:empty) {
+  background: hsl(270 30% 15% / 0.4);
+  margin-left: var(----custom-message-margin-left-content-cozy);
+  padding: var(--chat-bubble-padding);
+  border-radius: 12px;
+  display: var(--chat-bubble-display);
+  backdrop-filter: blur(5px);
+  border: 1px solid hsl(270 50% 50% / 0.1);
+  transition: all 0.3s ease;
+}
+
+#app-mount .cozyMessage__5126c .messageContent_c19a55:hover {
+  background: hsl(270 30% 18% / 0.6);
+  border-color: hsl(270 50% 50% / 0.2);
+}
+
+/* Formulario de chat con transparencia */
+#app-mount .form_f75fb0 {
+  padding: 0 var(--space-md);
+  position: relative;
+  z-index: 3;
+}
+
+#app-mount .channelTextArea_f75fb0,
+#app-mount .channelTextArea__5126c {
+  background: hsl(240 15% 6% / 0.6);
+  border: 2px solid var(--textbox-border);
+  border-radius: 12px;
+  transition: var(--transition);
+  transition-property: border-color, box-shadow, background;
+  backdrop-filter: blur(15px);
+}
+
+#app-mount .channelTextArea_f75fb0:hover,
+#app-mount .channelTextArea__5126c:hover {
+  border-color: var(--textbox-hover-border);
+  background: hsl(240 15% 8% / 0.7);
+}
+
+#app-mount .scrollableContainer__74017 {
+  background: transparent;
+}
+
+/* Lista de miembros con transparencia */
+#app-mount .container_c8ffbb {
+  background: hsl(240 15% 8% / 0.8);
+  border-left: 1px solid var(--bg-border);
+  backdrop-filter: blur(15px);
+}
+
+#app-mount .members_c8ffbb {
+  background: transparent;
+  padding: 0;
+}
+
+#app-mount .members_c8ffbb::-webkit-scrollbar {
+  display: none;
+}
+
+#app-mount .member_c8ffbb {
+  background: transparent;
+  max-width: 100%;
+  margin-left: 0;
+  border-radius: 8px;
+  margin: 2px 8px;
+  transition: all 0.3s ease;
+}
+
+#app-mount .member_c8ffbb:hover {
+  background: hsl(270 30% 15% / 0.3);
+  backdrop-filter: blur(10px);
+}
+
+#app-mount .member_c8ffbb.selected__91a9d .childContainer__91a9d {
+  background: hsl(270 100% 65% / 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+}
+
+#app-mount .member_c8ffbb.selected__91a9d .name__5d473 {
+  text-shadow: 0 0 calc(var(--members-glow-intensity) * 10px) currentColor;
+  overflow: visible;
+  filter: none;
+}
+
+#app-mount .childContainer__91a9d {
+  padding: var(--space-xs) var(--space-md);
+}
+
+#app-mount .layout__91a9d {
+  overflow: visible;
+  position: initial;
+}
+
+#app-mount .layout__91a9d .name__91a9d,
+#app-mount .layout__91a9d .content__91a9d,
+#app-mount .layout__91a9d .username__5d473 {
+  overflow: visible;
+}
+
+#app-mount .layout__91a9d .avatar__91a9d {
+  z-index: 1;
+}
+
+/* ===== MODAL DE CONFIGURACIÓN CON TRANSPARENCIA MEJORADA ===== */
+
+/* Contenedor principal del modal de configuración */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] {
+  background: hsl(240 20% 5% / 0.7) !important;
+  backdrop-filter: blur(25px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 40px !important;
+  animation: modal-fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(25px);
+  }
+}
+
+/* Ventana principal del modal con transparencia */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .standardSidebarView_c25c6d {
+  width: 85vw !important;
+  max-width: 1200px !important;
+  height: 80vh !important;
+  max-height: 800px !important;
+  min-height: 600px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 50px -12px hsl(0 0% 0% / 0.6), 0 0 0 1px hsl(270 50% 50% / 0.3), 0 0 50px hsl(270 100% 65% / 0.2) !important;
+  background: hsl(240 15% 8% / 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  position: relative !important;
+  animation: modal-scale-in 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+}
+
+@keyframes modal-scale-in {
+  from {
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Barra lateral de navegación con transparencia */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .sidebarRegion_c25c6d {
+  width: 280px !important;
+  background: hsl(240 15% 6% / 0.8) !important;
+  border-right: 1px solid hsl(270 50% 50% / 0.2) !important;
+  backdrop-filter: blur(15px) !important;
+  position: relative !important;
+}
+
+/* Efecto de glow en la barra lateral */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .sidebarRegion_c25c6d::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    hsl(270 100% 65% / 0.4) 20%,
+    hsl(270 100% 65% / 0.6) 50%,
+    hsl(270 100% 65% / 0.4) 80%,
+    transparent 100%
+  );
+  animation: sidebar-glow 3s infinite ease-in-out;
+}
+
+@keyframes sidebar-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Elementos de navegación en la sidebar */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .side_c25c6d .item_c25c6d {
+  margin: 4px 12px !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background: transparent !important;
+}
+
+/* Elemento seleccionado */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .side_c25c6d .item_c25c6d.selected_c25c6d {
+  background: hsl(270 100% 65% / 0.15) !important;
+  color: hsl(270 100% 75%) !important;
+  box-shadow: 0 0 20px hsl(270 100% 65% / 0.3), inset 0 1px 0 hsl(270 100% 75% / 0.2) !important;
+  transform: translateX(4px) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Efecto de hover */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .side_c25c6d .item_c25c6d:hover:not(.selected_c25c6d) {
+  background: hsl(270 50% 50% / 0.1) !important;
+  transform: translateX(2px) !important;
+  box-shadow: 0 4px 12px hsl(270 100% 65% / 0.1) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+/* Área de contenido principal */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .contentRegion_c25c6d {
+  background: hsl(240 12% 12% / 0.6) !important;
+  backdrop-filter: blur(15px) !important;
+  position: relative !important;
+}
+
+/* Header del contenido */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .toolsContainer_c25c6d {
+  background: hsl(240 12% 10% / 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid hsl(270 50% 50% / 0.2) !important;
+  padding: 20px 24px !important;
+  position: relative !important;
+}
+
+/* Título del header */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .toolsContainer_c25c6d h1 {
+  color: hsl(270 100% 75%) !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 10px hsl(270 100% 65% / 0.3) !important;
+}
+
+/* Botón de cerrar mejorado */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .closeButton_c25c6d {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: hsl(0 85% 65% / 0.1) !important;
+  border: 1px solid hsl(0 85% 65% / 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .closeButton_c25c6d:hover {
+  background: hsl(0 85% 65% / 0.2) !important;
+  border-color: hsl(0 85% 65% / 0.5) !important;
+  box-shadow: 0 0 20px hsl(0 85% 65% / 0.4) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Contenido scrolleable */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .contentColumn_c25c6d {
+  padding: 24px !important;
+  background: transparent !important;
+}
+
+/* Scrollbar personalizada */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .contentRegion_c25c6d .scrollerBase_c25c6d::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+#app-mount
+  .layer_ec16dd[aria-label*="USER_SETTINGS"]
+  .contentRegion_c25c6d
+  .scrollerBase_c25c6d::-webkit-scrollbar-track {
+  background: hsl(240 15% 8% / 0.5) !important;
+  border-radius: 4px !important;
+}
+
+#app-mount
+  .layer_ec16dd[aria-label*="USER_SETTINGS"]
+  .contentRegion_c25c6d
+  .scrollerBase_c25c6d::-webkit-scrollbar-thumb {
+  background: hsl(270 100% 65% / 0.4) !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+#app-mount
+  .layer_ec16dd[aria-label*="USER_SETTINGS"]
+  .contentRegion_c25c6d
+  .scrollerBase_c25c6d::-webkit-scrollbar-thumb:hover {
+  background: hsl(270 100% 65% / 0.6) !important;
+}
+
+/* Botones mejorados */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85 {
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Botón primario */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85.lookFilled_dd4f85.colorBrand_dd4f85 {
+  background: linear-gradient(135deg, hsl(270 100% 65%) 0%, hsl(280 100% 70%) 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px hsl(270 100% 65% / 0.4) !important;
+}
+
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85.lookFilled_dd4f85.colorBrand_dd4f85:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px hsl(270 100% 65% / 0.5) !important;
+}
+
+/* Botón secundario */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85.lookOutlined_dd4f85 {
+  border: 2px solid hsl(270 100% 65% / 0.4) !important;
+  color: hsl(270 100% 75%) !important;
+  background: hsl(270 100% 65% / 0.05) !important;
+}
+
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85.lookOutlined_dd4f85:hover {
+  background: hsl(270 100% 65% / 0.1) !important;
+  border-color: hsl(270 100% 65% / 0.6) !important;
+  box-shadow: 0 0 20px hsl(270 100% 65% / 0.3) !important;
+}
+
+/* Cards y secciones */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .accountProfileCard_c25c6d,
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .userSettingsAccount_c25c6d > div {
+  background: hsl(240 15% 10% / 0.4) !important;
+  border: 1px solid hsl(270 50% 50% / 0.2) !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+  backdrop-filter: blur(15px) !important;
+  transition: all 0.3s ease !important;
+}
+
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .accountProfileCard_c25c6d:hover,
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .userSettingsAccount_c25c6d > div:hover {
+  border-color: hsl(270 50% 50% / 0.4) !important;
+  box-shadow: 0 8px 32px hsl(270 100% 65% / 0.1) !important;
+  transform: translateY(-2px) !important;
+  background: hsl(240 15% 12% / 0.5) !important;
+}
+
+/* Inputs mejorados */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .inputDefault_f8bc55 {
+  background: hsl(240 15% 8% / 0.6) !important;
+  border: 2px solid hsl(270 50% 50% / 0.2) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  color: hsl(0 0% 95%) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .inputDefault_f8bc55:focus {
+  border-color: hsl(270 100% 65%) !important;
+  box-shadow: 0 0 0 3px hsl(270 100% 65% / 0.2), 0 0 20px hsl(270 100% 65% / 0.3) !important;
+  background: hsl(240 15% 10% / 0.7) !important;
+}
+
+/* Dividers */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .divider_c25c6d {
+  border-color: hsl(270 50% 50% / 0.2) !important;
+  margin: 24px 0 !important;
+}
+
+/* Efectos de partículas en el fondo del modal */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .standardSidebarView_c25c6d::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 20%, hsl(270 100% 65% / 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, hsl(280 100% 70% / 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, hsl(260 100% 60% / 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  animation: particles-float 20s infinite linear;
+}
+
+@keyframes particles-float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(240deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+
+/* Responsive para pantallas más pequeñas */
+@media (max-width: 1200px) {
+  #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .standardSidebarView_c25c6d {
+    width: 95vw !important;
+    height: 85vh !important;
+  }
+
+  #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .sidebarRegion_c25c6d {
+    width: 240px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .standardSidebarView_c25c6d {
+    width: 98vw !important;
+    height: 90vh !important;
+    border-radius: 16px !important;
+  }
+
+  #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .sidebarRegion_c25c6d {
+    width: 200px !important;
+  }
+}
+
+/* ===== FIN DEL MODAL DE CONFIGURACIÓN ===== */
