@@ -20,132 +20,6 @@
   --rs-phone-visible: block;
 }
 
-/* Efectos de glow mejorados para avatares */
-.wrapper__44b0c[aria-label*="Online" i],
-.wrapper__44b0c[aria-label*="online" i],
-.wrapper__44b0c[aria-label*="Conectado" i],
-.wrapper__44b0c[aria-label*="En línea con móvil" i],
-.wrapper__44b0c[aria-label*="En ligne" i],
-.wrapper__44b0c[aria-label*="Na mreži" i],
-.avatarWrapper[data-status="online"] .wrapper__44b0c {
-  box-shadow: 0 0 calc(var(--glow-intensity) * 15px) hsl(270 100% 70% / 0.4), 0 0 calc(var(--glow-intensity) * 30px)
-    hsl(270 100% 70% / 0.2), 0 0 calc(var(--glow-intensity) * 45px) hsl(270 100% 70% / 0.1);
-  animation: avatar-glow-online 3s infinite ease-in-out;
-}
-
-.wrapper__44b0c[aria-label*="Idle" i],
-.wrapper__44b0c[aria-label*="Inaktiv" i],
-.wrapper__44b0c[aria-label*="Abwesend" i],
-.wrapper__44b0c[aria-label*="Ausente" i],
-.wrapper__44b0c[aria-label*="Inactif" i],
-.wrapper__44b0c[aria-label*="U mirovanju" i],
-.avatarWrapper[data-status="idle"] .wrapper__44b0c {
-  box-shadow: 0 0 calc(var(--glow-intensity) * 12px) hsl(45 100% 65% / 0.4), 0 0 calc(var(--glow-intensity) * 25px)
-    hsl(45 100% 65% / 0.2);
-  animation: avatar-glow-idle 4s infinite ease-in-out;
-}
-
-.wrapper__44b0c[aria-label*="Do Not disturb" i],
-.wrapper__44b0c[aria-label*="Vil ikke forstyrres" i],
-.wrapper__44b0c[aria-label*="Bitte nicht stören" i],
-.wrapper__44b0c[aria-label*="No molestar" i],
-.wrapper__44b0c[aria-label*="Ne pas déranger" i],
-.wrapper__44b0c[aria-label*="Ne uznemiravaj" i],
-.avatarWrapper[data-status="dnd"] .wrapper__44b0c {
-  box-shadow: 0 0 calc(var(--glow-intensity) * 10px) hsl(0 85% 65% / 0.5), 0 0 calc(var(--glow-intensity) * 20px)
-    hsl(0 85% 65% / 0.3);
-  animation: avatar-glow-dnd 2s infinite ease-in-out;
-}
-
-.wrapper__44b0c[aria-label*="Streaming" i],
-.wrapper__44b0c[aria-label*="Streamer" i],
-.wrapper__44b0c[aria-label*="Streamt" i],
-.wrapper__44b0c[aria-label*="Transmitiendo" i],
-.wrapper__44b0c[aria-label*="En direct" i],
-.avatarWrapper[data-status="streaming"] .wrapper__44b0c {
-  box-shadow: 0 0 calc(var(--glow-intensity) * 18px) hsl(280 100% 75% / 0.5), 0 0 calc(var(--glow-intensity) * 35px)
-    hsl(280 100% 75% / 0.3);
-  animation: avatar-glow-streaming 1.5s infinite ease-in-out;
-}
-
-.wrapper__44b0c[aria-label*="Invisible" i],
-.wrapper__44b0c[aria-label*="Usynlig" i],
-.wrapper__44b0c[aria-label*="Unsichtbar" i],
-.wrapper__44b0c[aria-label*="Nevidljiv/a" i],
-.avatarWrapper[data-status="invisible"] .wrapper__44b0c {
-  box-shadow: 0 0 calc(var(--glow-intensity) * 8px) hsl(240 6% 50% / 0.3);
-}
-
-.wrapper__44b0c[aria-label*="Offline" i],
-.wrapper__44b0c[aria-label*="Desconectado" i],
-.wrapper__44b0c[aria-label*="Hors ligne" i],
-.wrapper__44b0c[aria-label*="Izvan mreže" i],
-.avatarWrapper[data-status="offline"] .wrapper__44b0c {
-  box-shadow: 0 0 calc(var(--glow-intensity) * 5px) hsl(240 8% 45% / 0.2);
-}
-
-/* Animaciones de glow para avatares */
-@keyframes avatar-glow-online {
-  0%,
-  100% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 15px) hsl(270 100% 70% / 0.4), 0 0 calc(var(--glow-intensity) * 30px)
-      hsl(270 100% 70% / 0.2);
-  }
-  50% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 20px) hsl(270 100% 70% / 0.6), 0 0 calc(var(--glow-intensity) * 40px)
-      hsl(270 100% 70% / 0.3);
-  }
-}
-
-@keyframes avatar-glow-idle {
-  0%,
-  100% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 12px) hsl(45 100% 65% / 0.3);
-  }
-  25%,
-  75% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 16px) hsl(45 100% 65% / 0.4);
-  }
-  50% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 20px) hsl(45 100% 65% / 0.5);
-  }
-}
-
-@keyframes avatar-glow-dnd {
-  0%,
-  100% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 10px) hsl(0 85% 65% / 0.4);
-  }
-  50% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 15px) hsl(0 85% 65% / 0.6);
-  }
-}
-
-@keyframes avatar-glow-streaming {
-  0%,
-  100% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 18px) hsl(280 100% 75% / 0.4);
-  }
-  33% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 25px) hsl(280 100% 75% / 0.6);
-  }
-  66% {
-    box-shadow: 0 0 calc(var(--glow-intensity) * 22px) hsl(280 100% 75% / 0.5);
-  }
-}
-
-#app-mount .wrapper__44b0c.StatusEverywhere-avatar-chatAvatar {
-  margin: 0;
-}
-#app-mount .avatarWrapper {
-  border-radius: var(--rs-avatar-shape);
-}
-#app-mount .avatarWrapper .pointerEvents-9SZWKj {
-  stroke: var(--status-color) !important;
-}
-#app-mount .avatarWrapper .pointerEvents-9SZWKj[width="30"] {
-  width: calc(100% - 9px) !important;
-}
 
 /* Variables del tema principal */
 :root {
@@ -204,7 +78,7 @@
 
   /* Variables para la imagen de fondo - CAMBIADO A LA IMAGEN QUE PROPORCIONASTE */
   --chat-bg-image: url("https://raw.githubusercontent.com/Geusedev/Torment/refs/heads/main/AFC_PARA_GIF_f9da2f62-a964-4f2d-a2db-e3f210034619.webp");
-  --image-size: 500px;
+  --image-size: 666px;
   --image-opacity: 0.2;
   --bloom-intensity: 3;
 }
@@ -479,48 +353,6 @@ body,
   transition-property: box-shadow, border-color, transform;
 }
 
-/* Estados de servidor con efectos de glow mejorados */
-#app-mount .listItem__650eb [class*="pill"] span[style*="height: 0"] {
-  box-shadow: 0 0 calc(var(--server-glow-intensity) * 20px) calc(var(--server-glow-intensity) * 8px)
-    hsl(from var(--server-unread-colour) h s l / 0.4), 0 0 calc(var(--server-glow-intensity) * 40px)
-    calc(var(--server-glow-intensity) * 15px) hsl(from var(--server-unread-colour) h s l / 0.2);
-  border-color: hsl(from var(--server-unread-colour) h s l);
-  animation: server-unread-pulse 2s infinite ease-in-out;
-}
-
-@keyframes server-unread-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 calc(var(--server-glow-intensity) * 15px) calc(var(--server-glow-intensity) * 5px)
-      hsl(from var(--server-unread-colour) h s l / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 calc(var(--server-glow-intensity) * 25px) calc(var(--server-glow-intensity) * 10px)
-      hsl(from var(--server-unread-colour) h s l / 0.5);
-  }
-}
-
-/* Servidor seleccionado */
-#app-mount .listItem__650eb [class*="pill"] span[style*="height: 21"] {
-  transform: scale(1) !important;
-  border-color: hsl(from var(--server-selected-colour) h s l);
-  box-shadow: 0 0 calc(var(--server-glow-intensity) * 25px) calc(var(--server-glow-intensity) * 10px)
-    hsl(from var(--server-selected-colour) h s l / 0.4), 0 0 calc(var(--server-glow-intensity) * 50px)
-    calc(var(--server-glow-intensity) * 20px) hsl(from var(--server-selected-colour) h s l / 0.2);
-  animation: server-selected-glow 3s infinite ease-in-out;
-}
-
-@keyframes server-selected-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 calc(var(--server-glow-intensity) * 20px) calc(var(--server-glow-intensity) * 8px)
-      hsl(from var(--server-selected-colour) h s l / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 calc(var(--server-glow-intensity) * 30px) calc(var(--server-glow-intensity) * 12px)
-      hsl(from var(--server-selected-colour) h s l / 0.5);
-  }
-}
 
 /* Efectos de interacción mejorados */
 #app-mount .blobContainer_e5445c,
@@ -547,71 +379,6 @@ body,
 
 .pill__5bc7e {
   display: none;
-}
-
-/* Canales con efectos mejorados */
-#app-mount .wrapper__2ea32.modeSelected__2ea32 .link__2ea32 {
-  background: hsl(from var(--accent) h s l / 0.15);
-  backdrop-filter: blur(10px);
-  animation: channel-selected-glow 2s infinite ease-in-out;
-}
-
-@keyframes channel-selected-glow {
-  0%,
-  100% {
-    background: hsl(from var(--accent) h s l / 0.1);
-  }
-  50% {
-    background: hsl(from var(--accent) h s l / 0.2);
-  }
-}
-
-#app-mount .wrapper__2ea32.modeSelected__2ea32 .link__2ea32::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: var(--channel-pill-width);
-  top: 0;
-  background: var(--accent);
-  box-shadow: 0 0 calc(var(--channel-glow-intensity) * 20px) calc(var(--channel-glow-intensity) * 8px)
-    hsl(from var(--accent) h s l / 0.4), 0 0 calc(var(--channel-glow-intensity) * 40px)
-    calc(var(--channel-glow-intensity) * 15px) hsl(from var(--accent) h s l / 0.2);
-  animation: channel-pill-pulse 3s infinite ease-in-out;
-}
-
-@keyframes channel-pill-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 calc(var(--channel-glow-intensity) * 15px) calc(var(--channel-glow-intensity) * 5px)
-      hsl(from var(--accent) h s l / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 calc(var(--channel-glow-intensity) * 25px) calc(var(--channel-glow-intensity) * 10px)
-      hsl(from var(--accent) h s l / 0.5);
-  }
-}
-
-/* Campo de texto mejorado */
-#app-mount .channelTextArea_f75fb0:focus-within,
-#app-mount .channelTextArea__5126c:focus-within {
-  border-color: hsl(from var(--accent) h s l);
-  box-shadow: 0 0 calc(var(--input-glow-intensity) * 25px) calc(var(--input-glow-intensity) * 8px)
-    hsl(from var(--accent) h s l / 0.3), 0 0 calc(var(--input-glow-intensity) * 50px)
-    calc(var(--input-glow-intensity) * 15px) hsl(from var(--accent) h s l / 0.1);
-  animation: input-focus-glow 2s infinite ease-in-out;
-}
-
-@keyframes input-focus-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 calc(var(--input-glow-intensity) * 20px) calc(var(--input-glow-intensity) * 5px)
-      hsl(from var(--accent) h s l / 0.25);
-  }
-  50% {
-    box-shadow: 0 0 calc(var(--input-glow-intensity) * 30px) calc(var(--input-glow-intensity) * 10px)
-      hsl(from var(--accent) h s l / 0.35);
-  }
 }
 
 /* Resto de estilos básicos para compatibilidad */
@@ -721,79 +488,6 @@ body,
   box-shadow: 0 8px 32px hsl(270 100% 65% / 0.15) !important;
 }
 
-/* Avatar del usuario - ESPACIADO CORRECTO */
-#app-mount .container__37e49 .avatar__91a9d {
-  flex-shrink: 0 !important;
-  width: 36px !important;
-  height: 36px !important;
-  position: relative !important;
-  z-index: 2 !important;
-  margin: 0 !important;
-}
-
-/* Información del usuario - SIN SOLAPAMIENTO */
-#app-mount .container__37e49 .nameTag__91a9d {
-  flex: 1 !important;
-  min-width: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  z-index: 1 !important;
-  gap: 2px !important;
-}
-
-#app-mount .container__37e49 .username__5d473 {
-  font-family: "JetBrains Mono", monospace !important;
-  font-weight: 600 !important;
-  font-size: 14px !important;
-  line-height: 1.2 !important;
-  color: hsl(0 0% 95%) !important;
-  text-shadow: 0 0 10px hsl(270 100% 65% / 0.4) !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-#app-mount .container__37e49 .discriminator__5d473 {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 12px !important;
-  color: hsl(0 0% 70%) !important;
-  line-height: 1 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Botones del usuario - ESPACIADO CORRECTO */
-#app-mount .container__37e49 .flex__91a9d {
-  display: flex !important;
-  gap: 6px !important;
-  flex-shrink: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-#app-mount .container__37e49 .button__91a9d {
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 8px !important;
-  background: hsl(270 50% 50% / 0.1) !important;
-  border: 1px solid hsl(270 50% 50% / 0.2) !important;
-  transition: all 0.3s ease !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-#app-mount .container__37e49 .button__91a9d:hover {
-  background: hsl(270 50% 50% / 0.2) !important;
-  border-color: hsl(270 50% 50% / 0.4) !important;
-  box-shadow: 0 0 20px hsl(270 100% 65% / 0.3) !important;
-  transform: scale(1.08) !important;
-}
 
 /* ===== ÁREA DE CHAT CON IMAGEN DE FONDO Y BLOOM MEJORADO ===== */
 
@@ -826,24 +520,6 @@ body,
   border-radius: 20px;
 }
 
-/* Efecto de bloom múltiple alrededor de la imagen - MEJORADO */
-#app-mount .chat_f75fb0::after {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: calc(var(--image-size) * 2);
-  height: calc(var(--image-size) * 2);
-  background-image: var(--chat-bg-image);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  pointer-events: none;
-  animation: image-bloom 10s infinite ease-in-out;
-  border-radius: 40px;
-}
 
 /* Capas adicionales de bloom */
 #app-mount .chatContent_f75fb0 {
@@ -875,27 +551,6 @@ body,
   border-radius: 60px;
 }
 
-/* Cuarta capa de bloom */
-#app-mount .chatContent_f75fb0::after {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: calc(var(--image-size) * 3.5);
-  height: calc(var(--image-size) * 3.5);
-  background: radial-gradient(circle, hsl(270 100% 65% / 0.05) 0%, hsl(280 100% 70% / 0.03) 40%, transparent 70%);
-  transform: translate(-50%, -50%);
-  z-index: -3;
-  pointer-events: none;
-  animation: image-bloom 25s infinite ease-in-out;
-  border-radius: 80px;
-}
-
-#app-mount .chat_f75fb0 ol.scrollerInner__36d07 {
-  padding-bottom: var(--chat-bottom-spacing);
-  position: relative;
-  z-index: 2;
-}
 
 /* ===== ARREGLO COMPLETO DEL SOLAPAMIENTO EN MENSAJES ===== */
 
@@ -920,15 +575,6 @@ body,
   border-color: hsl(270 50% 50% / 0.3);
   transform: translateY(-2px);
   box-shadow: 0 12px 40px hsl(270 100% 65% / 0.2);
-}
-
-/* Avatar en mensajes - ESPACIADO CORRECTO */
-#app-mount .message__5126c .avatar__91a9d {
-  flex-shrink: 0 !important;
-  width: 40px !important;
-  height: 40px !important;
-  margin: 1 !important;
-  position: relative !important;
 }
 
 /* Contenido del mensaje - SIN SOLAPAMIENTO */
