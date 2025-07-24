@@ -1,0 +1,69 @@
+/**
+ * @name Geuse
+ * @author Tu Nombre
+ * @version 2.0.0
+ * @description Un tema oscuro y elegante para Discord con acentos púrpura y animaciones suaves.
+ * @source https://github.com/tu-usuario/Geuse
+ * @invite TuInvite
+*/
+
+@import url('./Geuse.css');
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /*
+   * Geuse variables - Paleta Oscura con Púrpura
+   */
+  --background-image: url("https://i.imgur.com/your-dark-bg.png"); /* Imagen de fondo oscura | URL DEBE SER DIRECTA */
+  --background-blur: 2px; /* Desenfoque de la imagen de fondo */
+  --accent: hsl(270 100% 65%); /* Púrpura vibrante como color principal */
+  --accent-dark: hsl(270 80% 45%); /* Púrpura más oscuro para variaciones */
+  --accent-text: hsl(0 0% 5%); /* Texto sobre fondos de acento */
+  --glow-intensity: 1.5; /* Intensidad del brillo - aumentado para más dramatismo */
+  --members-width: 280px; /* Ancho de la lista de miembros */
+  --guilds-width: 95px; /* Ancho de la lista de servidores */
+  --server-icon-size: 46; /* Tamaño de los iconos de servidor */
+  --chat-avatar-size: 40px; /* Tamaño de avatares en chat */
+  --opacity: 0.9; /* Opacidad general - ligeramente más opaco */
+  --font: "Inter"; /* Fuente principal */
+  --font-mono: "JetBrains Mono"; /* Fuente monoespaciada para código */
+  
+  /* Colores de la paleta oscura */
+  --bg-primary: hsl(240 15% 8%); /* Negro azulado muy oscuro */
+  --bg-secondary: hsl(240 12% 12%); /* Gris muy oscuro */
+  --bg-tertiary: hsl(240 10% 16%); /* Gris oscuro */
+  --text-primary: hsl(0 0% 95%); /* Blanco casi puro */
+  --text-secondary: hsl(0 0% 75%); /* Gris claro */
+  --text-muted: hsl(0 0% 55%); /* Gris medio */
+  
+  /*
+   * RadialStatus variables - Colores púrpura oscuros
+   */
+  --rs-small-spacing: 2px;
+  --rs-medium-spacing: 4px;
+  --rs-large-spacing: 4px;
+  --rs-small-width: 2px; /* Aumentado para mejor visibilidad */
+  --rs-medium-width: 2.5px;
+  --rs-large-width: 3px;
+  
+  /* Colores de estado personalizados */
+  --rs-online-color: hsl(270 100% 70%); /* Púrpura brillante para online */
+  --rs-idle-color: hsl(45 100% 65%); /* Amarillo dorado para idle */
+  --rs-dnd-color: hsl(0 85% 65%); /* Rojo suave para no molestar */
+  --rs-offline-color: hsl(240 8% 45%); /* Gris oscuro para offline */
+  --rs-streaming-color: hsl(280 100% 75%); /* Púrpura más claro para streaming */
+  --rs-invisible-color: hsl(240 6% 50%); /* Gris medio para invisible */
+  --rs-phone-color: var(--rs-online-color);
+  --rs-phone-visible: block;
+  --rs-self-speaking-colour: hsl(270 100% 75%); /* Púrpura para cuando hablas */
+  
+  /* Variables de animación mejoradas */
+  --animation-speed-fast: 0.2s;
+  --animation-speed-normal: 0.3s;
+  --animation-speed-slow: 0.5s;
+  --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
