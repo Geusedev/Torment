@@ -7,7 +7,7 @@
  * @invite TuInvite
 */
 
-@import url('./Geuse.css');
+@import url('https://raw.githubusercontent.com/Geusedev/Torment/refs/heads/main/Geuse.css');
 
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
