@@ -149,7 +149,7 @@
 
 /* Variables del tema principal */
 :root {
-  --geuse-version: "2.3.0";
+  --geuse-version: "2.4.0";
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -199,14 +199,14 @@
   --server-hover-colour: hsl(270 80% 70%);
   --server-selected-colour: var(--accent, hsl(270 100% 65%));
   --server-spacing: 18px;
-  --server-glow-intensity: var(--glow-intensity, 1.5);
+  --server-glow-intensity: var(--glow-intensity, 1.8);
   --server-ring-offset: 8px;
 
-  /* Variables para el gif de fondo - CORREGIDAS */
-  --chat-bg-gif: url("https://raw.githubusercontent.com/Geusedev/Torment/refs/heads/main/AFC_PARA_GIF_f9da2f62-a964-4f2d-a2db-e3f210034619.webp");
-  --gif-size: 350px;
-  --gif-opacity: 0.25;
-  --bloom-intensity: 2.5;
+  /* Variables para la imagen de fondo - CAMBIADO A LA IMAGEN QUE PROPORCIONASTE */
+  --chat-bg-image: url("https://pbs.twimg.com/media/F2OtoQUXQAA18ui.jpg");
+  --image-size: 400px;
+  --image-opacity: 0.2;
+  --bloom-intensity: 3;
 }
 
 /* Animaciones globales mejoradas */
@@ -241,40 +241,40 @@
   }
 }
 
-@keyframes gif-bloom {
+@keyframes image-bloom {
   0%,
   100% {
-    filter: blur(15px) brightness(1.3) saturate(1.8) hue-rotate(0deg);
-    transform: scale(1.2);
-    opacity: 0.4;
+    filter: blur(20px) brightness(1.4) saturate(2) hue-rotate(0deg);
+    transform: scale(1.3);
+    opacity: 0.3;
   }
   25% {
-    filter: blur(20px) brightness(1.5) saturate(2.2) hue-rotate(5deg);
-    transform: scale(1.25);
-    opacity: 0.5;
+    filter: blur(25px) brightness(1.6) saturate(2.5) hue-rotate(10deg);
+    transform: scale(1.35);
+    opacity: 0.4;
   }
   50% {
-    filter: blur(25px) brightness(1.7) saturate(2.5) hue-rotate(10deg);
-    transform: scale(1.3);
-    opacity: 0.6;
+    filter: blur(30px) brightness(1.8) saturate(3) hue-rotate(20deg);
+    transform: scale(1.4);
+    opacity: 0.5;
   }
   75% {
-    filter: blur(20px) brightness(1.5) saturate(2.2) hue-rotate(5deg);
-    transform: scale(1.25);
-    opacity: 0.5;
+    filter: blur(25px) brightness(1.6) saturate(2.5) hue-rotate(10deg);
+    transform: scale(1.35);
+    opacity: 0.4;
   }
 }
 
-@keyframes gif-float {
+@keyframes image-float {
   0%,
   100% {
     transform: translate(-50%, -50%) translateY(0px) rotate(0deg);
   }
   33% {
-    transform: translate(-50%, -50%) translateY(-8px) rotate(1deg);
+    transform: translate(-50%, -50%) translateY(-10px) rotate(2deg);
   }
   66% {
-    transform: translate(-50%, -50%) translateY(5px) rotate(-1deg);
+    transform: translate(-50%, -50%) translateY(8px) rotate(-2deg);
   }
 }
 
@@ -314,13 +314,33 @@
   }
 }
 
+@keyframes hologram-flicker {
+  0%,
+  100% {
+    opacity: 0.8;
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  25% {
+    opacity: 0.9;
+    filter: brightness(1.1) hue-rotate(5deg);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.2) hue-rotate(10deg);
+  }
+  75% {
+    opacity: 0.9;
+    filter: brightness(1.1) hue-rotate(5deg);
+  }
+}
+
 /* Barra superior */
 #app-mount .bar_c38106 {
   background: var(--bg-primary);
   border-bottom: 1px solid var(--bg-border);
 }
 
-/* Fondo principal - USANDO GRADIENTE CSS EN LUGAR DE IMAGEN EXTERNA */
+/* Fondo principal */
 html,
 span:not([class*="spinner_"]):not([class*="spinnerItem"]) {
   backface-visibility: hidden;
@@ -334,12 +354,10 @@ body,
 }
 
 #app-mount .bg__960e4 {
-  /* CAMBIADO: Usando gradiente CSS en lugar de imagen externa */
   background: var(--background-gradient);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  /* Removido filter con blur ya que no hay imagen externa */
 }
 
 .content_c48ade::before {
@@ -377,11 +395,11 @@ body,
 
 /* Información del tema */
 #app-mount .info__2debe .line__2debe:last-of-type:after {
-  content: "Geuse " var(--geuse-version) " - JetBrains Enhanced";
+  content: "Geuse " var(--geuse-version) " - JetBrains Cyber Enhanced";
   display: block;
   text-transform: none;
   color: var(--accent);
-  font-weight: 500;
+  font-weight: 600;
   font-family: "JetBrains Mono", monospace;
   animation: neon-flicker 4s infinite ease-in-out;
 }
@@ -655,9 +673,9 @@ body,
   display: none;
 }
 
-/* ===== ARREGLO DEL AVATAR Y NOMBRE DEL USUARIO ===== */
+/* ===== ARREGLO COMPLETO DEL AVATAR Y NOMBRE DEL USUARIO ===== */
 
-/* Paneles inferiores - ARREGLADO EL SOLAPAMIENTO */
+/* Paneles inferiores - COMPLETAMENTE ARREGLADO */
 #app-mount .panels_c48ade {
   bottom: 0;
   left: 0;
@@ -667,6 +685,8 @@ body,
   border-top: 1px solid var(--bg-border);
   background: var(--bg-primary);
   z-index: 10;
+  height: auto;
+  min-height: 52px;
 }
 
 #app-mount .activityPanel_c48ade {
@@ -680,89 +700,102 @@ body,
   border-color: var(--bg-border);
 }
 
-/* Contenedor del usuario - ARREGLADO */
+/* Contenedor del usuario - COMPLETAMENTE REDISEÑADO */
 #app-mount .container__37e49 {
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: hsl(240 15% 10% / 0.8);
-  backdrop-filter: blur(10px);
-  border-radius: 8px;
-  margin: 4px;
-  transition: all 0.3s ease;
+  padding: 10px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  background: hsl(240 15% 10% / 0.8) !important;
+  backdrop-filter: blur(15px) !important;
+  border-radius: 12px !important;
+  margin: 6px !important;
+  transition: all 0.3s ease !important;
+  min-height: 52px !important;
+  box-sizing: border-box !important;
 }
 
 #app-mount .container__37e49:hover {
-  background: hsl(240 15% 12% / 0.9);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px hsl(270 100% 65% / 0.1);
+  background: hsl(240 15% 12% / 0.9) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px hsl(270 100% 65% / 0.15) !important;
 }
 
-/* Avatar del usuario */
+/* Avatar del usuario - ESPACIADO CORRECTO */
 #app-mount .container__37e49 .avatar__91a9d {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  position: relative;
-  z-index: 2;
+  flex-shrink: 0 !important;
+  width: 36px !important;
+  height: 36px !important;
+  position: relative !important;
+  z-index: 2 !important;
+  margin: 0 !important;
 }
 
-/* Información del usuario */
+/* Información del usuario - SIN SOLAPAMIENTO */
 #app-mount .container__37e49 .nameTag__91a9d {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 0;
-  z-index: 1;
+  flex: 1 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 1 !important;
+  gap: 2px !important;
 }
 
 #app-mount .container__37e49 .username__5d473 {
-  font-family: "JetBrains Mono", monospace;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.2;
-  color: hsl(0 0% 95%);
-  text-shadow: 0 0 8px hsl(270 100% 65% / 0.3);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-family: "JetBrains Mono", monospace !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  color: hsl(0 0% 95%) !important;
+  text-shadow: 0 0 10px hsl(270 100% 65% / 0.4) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 #app-mount .container__37e49 .discriminator__5d473 {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
-  color: hsl(0 0% 70%);
-  line-height: 1;
-  margin-top: 2px;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 12px !important;
+  color: hsl(0 0% 70%) !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Botones del usuario */
+/* Botones del usuario - ESPACIADO CORRECTO */
 #app-mount .container__37e49 .flex__91a9d {
-  display: flex;
-  gap: 4px;
-  flex-shrink: 0;
+  display: flex !important;
+  gap: 6px !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 #app-mount .container__37e49 .button__91a9d {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background: hsl(270 50% 50% / 0.1);
-  border: 1px solid hsl(270 50% 50% / 0.2);
-  transition: all 0.3s ease;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 8px !important;
+  background: hsl(270 50% 50% / 0.1) !important;
+  border: 1px solid hsl(270 50% 50% / 0.2) !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 #app-mount .container__37e49 .button__91a9d:hover {
-  background: hsl(270 50% 50% / 0.2);
-  border-color: hsl(270 50% 50% / 0.4);
-  box-shadow: 0 0 15px hsl(270 100% 65% / 0.2);
-  transform: scale(1.05);
+  background: hsl(270 50% 50% / 0.2) !important;
+  border-color: hsl(270 50% 50% / 0.4) !important;
+  box-shadow: 0 0 20px hsl(270 100% 65% / 0.3) !important;
+  transform: scale(1.08) !important;
 }
 
-/* ===== ÁREA DE CHAT CON GIF DE FONDO Y BLOOM MEJORADO ===== */
+/* ===== ÁREA DE CHAT CON IMAGEN DE FONDO Y BLOOM MEJORADO ===== */
 
 /* Chat principal con transparencia mejorada */
 #app-mount .chat_f75fb0 {
@@ -772,42 +805,44 @@ body,
   overflow: hidden;
 }
 
-/* GIF principal - CORREGIDO Y MEJORADO */
+/* IMAGEN principal - USANDO LA IMAGEN QUE PROPORCIONASTE */
 #app-mount .chat_f75fb0::before {
   content: "";
   position: fixed;
   top: 50%;
   left: 50%;
-  width: var(--gif-size);
-  height: var(--gif-size);
-  background-image: var(--chat-bg-gif);
-  background-size: contain;
+  width: var(--image-size);
+  height: var(--image-size);
+  background-image: var(--chat-bg-image);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   transform: translate(-50%, -50%);
-  opacity: var(--gif-opacity);
+  opacity: var(--image-opacity);
   z-index: 0;
   pointer-events: none;
-  animation: gif-float 12s infinite ease-in-out;
-  filter: brightness(1.2) saturate(1.5);
+  animation: image-float 15s infinite ease-in-out;
+  filter: brightness(1.3) saturate(1.6);
+  border-radius: 20px;
 }
 
-/* Efecto de bloom múltiple alrededor del gif - MEJORADO */
+/* Efecto de bloom múltiple alrededor de la imagen - MEJORADO */
 #app-mount .chat_f75fb0::after {
   content: "";
   position: fixed;
   top: 50%;
   left: 50%;
-  width: calc(var(--gif-size) * 1.8);
-  height: calc(var(--gif-size) * 1.8);
-  background-image: var(--chat-bg-gif);
-  background-size: contain;
+  width: calc(var(--image-size) * 2);
+  height: calc(var(--image-size) * 2);
+  background-image: var(--chat-bg-image);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   transform: translate(-50%, -50%);
   z-index: -1;
   pointer-events: none;
-  animation: gif-bloom 8s infinite ease-in-out;
+  animation: image-bloom 10s infinite ease-in-out;
+  border-radius: 40px;
 }
 
 /* Capas adicionales de bloom */
@@ -823,35 +858,37 @@ body,
   position: fixed;
   top: 50%;
   left: 50%;
-  width: calc(var(--gif-size) * 2.5);
-  height: calc(var(--gif-size) * 2.5);
+  width: calc(var(--image-size) * 2.8);
+  height: calc(var(--image-size) * 2.8);
   background: radial-gradient(
     circle,
-    hsl(270 100% 65% / 0.08) 0%,
-    hsl(280 100% 70% / 0.06) 25%,
-    hsl(260 100% 60% / 0.04) 50%,
-    hsl(290 100% 75% / 0.02) 75%,
+    hsl(270 100% 65% / 0.1) 0%,
+    hsl(280 100% 70% / 0.08) 25%,
+    hsl(260 100% 60% / 0.06) 50%,
+    hsl(290 100% 75% / 0.04) 75%,
     transparent 100%
   );
   transform: translate(-50%, -50%);
   z-index: -2;
   pointer-events: none;
-  animation: gif-bloom 15s infinite ease-in-out reverse;
+  animation: image-bloom 18s infinite ease-in-out reverse;
+  border-radius: 60px;
 }
 
-/* Tercera capa de bloom */
+/* Cuarta capa de bloom */
 #app-mount .chatContent_f75fb0::after {
   content: "";
   position: fixed;
   top: 50%;
   left: 50%;
-  width: calc(var(--gif-size) * 3);
-  height: calc(var(--gif-size) * 3);
-  background: radial-gradient(circle, hsl(270 100% 65% / 0.03) 0%, hsl(280 100% 70% / 0.02) 40%, transparent 70%);
+  width: calc(var(--image-size) * 3.5);
+  height: calc(var(--image-size) * 3.5);
+  background: radial-gradient(circle, hsl(270 100% 65% / 0.05) 0%, hsl(280 100% 70% / 0.03) 40%, transparent 70%);
   transform: translate(-50%, -50%);
   z-index: -3;
   pointer-events: none;
-  animation: gif-bloom 20s infinite ease-in-out;
+  animation: image-bloom 25s infinite ease-in-out;
+  border-radius: 80px;
 }
 
 #app-mount .chat_f75fb0 ol.scrollerInner__36d07 {
@@ -860,59 +897,110 @@ body,
   z-index: 2;
 }
 
-/* Mensajes con transparencia mejorada */
+/* ===== ARREGLO COMPLETO DEL SOLAPAMIENTO EN MENSAJES ===== */
+
+/* Mensajes con espaciado correcto - SIN SOLAPAMIENTO */
 #app-mount .message__5126c {
-  background: hsl(240 15% 10% / 0.5) !important;
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  margin: 6px 16px;
-  padding: 10px 14px;
-  border: 1px solid hsl(270 50% 50% / 0.15);
+  background: hsl(240 15% 10% / 0.6) !important;
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  margin: 8px 20px;
+  padding: 12px 16px;
+  border: 1px solid hsl(270 50% 50% / 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: "JetBrains Mono", monospace;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-height: 44px;
 }
 
 #app-mount .message__5126c:hover {
-  background: hsl(240 15% 12% / 0.7) !important;
-  border-color: hsl(270 50% 50% / 0.25);
+  background: hsl(240 15% 12% / 0.8) !important;
+  border-color: hsl(270 50% 50% / 0.3);
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px hsl(270 100% 65% / 0.15);
+  box-shadow: 0 12px 40px hsl(270 100% 65% / 0.2);
+}
+
+/* Avatar en mensajes - ESPACIADO CORRECTO */
+#app-mount .message__5126c .avatar__91a9d {
+  flex-shrink: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 !important;
+  position: relative !important;
+}
+
+/* Contenido del mensaje - SIN SOLAPAMIENTO */
+#app-mount .message__5126c .contents_c19a55 {
+  flex: 1 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Header del mensaje - ESPACIADO CORRECTO */
+#app-mount .message__5126c .header_c19a55 {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-wrap: wrap !important;
+}
+
+/* Nombre de usuario en mensajes - SIN SOLAPAMIENTO */
+#app-mount .message__5126c .username_c19a55 {
+  font-family: "JetBrains Mono", monospace !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 1.2 !important;
+  color: hsl(0 0% 95%) !important;
+  text-shadow: 0 0 12px hsl(270 100% 65% / 0.5) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Timestamp - ESPACIADO CORRECTO */
+#app-mount .message__5126c .timestamp_c19a55 {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 12px !important;
+  color: hsl(0 0% 60%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Contenido del mensaje - ESPACIADO CORRECTO */
+#app-mount .message__5126c .messageContent_c19a55 {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  color: hsl(0 0% 90%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  word-wrap: break-word !important;
 }
 
 /* Mensajes mencionados */
 #app-mount .message__5126c.mentioned__5126c {
-  background: hsl(270 100% 65% / 0.12) !important;
-  border-color: hsl(270 100% 65% / 0.35);
-  box-shadow: 0 0 25px hsl(270 100% 65% / 0.25);
+  background: hsl(270 100% 65% / 0.15) !important;
+  border-color: hsl(270 100% 65% / 0.4);
+  box-shadow: 0 0 30px hsl(270 100% 65% / 0.3);
 }
 
 #app-mount .message__5126c.mentioned__5126c::before {
   background: hsl(270 100% 65%);
-  box-shadow: 0 0 15px hsl(270 100% 65% / 0.6);
+  box-shadow: 0 0 20px hsl(270 100% 65% / 0.7);
 }
 
 #app-mount .message__5126c.mentioned__5126c:hover {
-  background: hsl(270 100% 65% / 0.18) !important;
-  box-shadow: 0 0 35px hsl(270 100% 65% / 0.35);
-}
-
-/* Burbujas de chat mejoradas */
-#app-mount .cozyMessage__5126c .messageContent_c19a55:not(.repliedTextContent_c19a55):not(:empty) {
-  background: hsl(270 30% 15% / 0.5);
-  margin-left: var(----custom-message-margin-left-content-cozy);
-  padding: var(--chat-bubble-padding);
-  border-radius: 16px;
-  display: var(--chat-bubble-display);
-  backdrop-filter: blur(8px);
-  border: 1px solid hsl(270 50% 50% / 0.15);
-  transition: all 0.3s ease;
-  font-family: "JetBrains Mono", monospace;
-}
-
-#app-mount .cozyMessage__5126c .messageContent_c19a55:hover {
-  background: hsl(270 30% 18% / 0.7);
-  border-color: hsl(270 50% 50% / 0.25);
-  transform: scale(1.02);
+  background: hsl(270 100% 65% / 0.2) !important;
+  box-shadow: 0 0 40px hsl(270 100% 65% / 0.4);
 }
 
 /* Formulario de chat con transparencia */
@@ -924,19 +1012,19 @@ body,
 
 #app-mount .channelTextArea_f75fb0,
 #app-mount .channelTextArea__5126c {
-  background: hsl(240 15% 6% / 0.7);
+  background: hsl(240 15% 6% / 0.8);
   border: 2px solid var(--textbox-border);
-  border-radius: 16px;
+  border-radius: 20px;
   transition: var(--transition);
   transition-property: border-color, box-shadow, background;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(25px);
   font-family: "JetBrains Mono", monospace;
 }
 
 #app-mount .channelTextArea_f75fb0:hover,
 #app-mount .channelTextArea__5126c:hover {
   border-color: var(--textbox-hover-border);
-  background: hsl(240 15% 8% / 0.8);
+  background: hsl(240 15% 8% / 0.9);
 }
 
 #app-mount .scrollableContainer__74017 {
@@ -945,9 +1033,9 @@ body,
 
 /* Lista de miembros con transparencia */
 #app-mount .container_c8ffbb {
-  background: hsl(240 15% 8% / 0.85);
+  background: hsl(240 15% 8% / 0.9);
   border-left: 1px solid var(--bg-border);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(25px);
 }
 
 #app-mount .members_c8ffbb {
@@ -963,31 +1051,31 @@ body,
   background: transparent;
   max-width: 100%;
   margin-left: 0;
-  border-radius: 10px;
-  margin: 3px 8px;
+  border-radius: 12px;
+  margin: 4px 10px;
   transition: all 0.3s ease;
   font-family: "JetBrains Mono", monospace;
 }
 
 #app-mount .member_c8ffbb:hover {
-  background: hsl(270 30% 15% / 0.4);
-  backdrop-filter: blur(12px);
-  transform: translateX(4px);
+  background: hsl(270 30% 15% / 0.5);
+  backdrop-filter: blur(15px);
+  transform: translateX(6px);
 }
 
 #app-mount .member_c8ffbb.selected__91a9d .childContainer__91a9d {
-  background: hsl(270 100% 65% / 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 10px;
-  box-shadow: 0 0 20px hsl(270 100% 65% / 0.2);
+  background: hsl(270 100% 65% / 0.18);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  box-shadow: 0 0 25px hsl(270 100% 65% / 0.3);
 }
 
 #app-mount .member_c8ffbb.selected__91a9d .name__5d473 {
-  text-shadow: 0 0 calc(var(--members-glow-intensity) * 12px) currentColor;
+  text-shadow: 0 0 calc(var(--members-glow-intensity) * 15px) currentColor;
   overflow: visible;
   filter: none;
   font-family: "JetBrains Mono", monospace;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 #app-mount .childContainer__91a9d {
@@ -1010,7 +1098,7 @@ body,
   z-index: 1;
 }
 
-/* ===== EFECTOS ESTÉTICOS ADICIONALES ===== */
+/* ===== EFECTOS ESTÉTICOS ADICIONALES MEJORADOS ===== */
 
 /* Efecto Matrix en el fondo */
 #app-mount::before {
@@ -1023,18 +1111,18 @@ body,
   background: linear-gradient(
     90deg,
     transparent 0%,
-    hsl(270 100% 65% / 0.01) 25%,
-    hsl(270 100% 65% / 0.02) 50%,
-    hsl(270 100% 65% / 0.01) 75%,
+    hsl(270 100% 65% / 0.015) 25%,
+    hsl(270 100% 65% / 0.03) 50%,
+    hsl(270 100% 65% / 0.015) 75%,
     transparent 100%
   );
-  background-size: 200px 100%;
-  animation: cyber-scan 10s infinite linear;
+  background-size: 300px 100%;
+  animation: cyber-scan 12s infinite linear;
   z-index: -10;
   pointer-events: none;
 }
 
-/* Partículas flotantes */
+/* Partículas flotantes mejoradas */
 #app-mount::after {
   content: "";
   position: fixed;
@@ -1042,59 +1130,77 @@ body,
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle at 20% 20%, hsl(270 100% 65% / 0.02) 1px, transparent 1px),
-    radial-gradient(circle at 80% 80%, hsl(280 100% 70% / 0.02) 1px, transparent 1px),
-    radial-gradient(circle at 40% 60%, hsl(260 100% 60% / 0.015) 1px, transparent 1px);
-  background-size: 100px 100px, 150px 150px, 200px 200px;
-  animation: particles-float 25s infinite linear;
+  background-image: radial-gradient(circle at 20% 20%, hsl(270 100% 65% / 0.03) 2px, transparent 2px),
+    radial-gradient(circle at 80% 80%, hsl(280 100% 70% / 0.025) 2px, transparent 2px),
+    radial-gradient(circle at 40% 60%, hsl(260 100% 60% / 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 60% 40%, hsl(290 100% 75% / 0.02) 1px, transparent 1px);
+  background-size: 120px 120px, 180px 180px, 240px 240px, 160px 160px;
+  animation: particles-float 30s infinite linear;
   z-index: -9;
   pointer-events: none;
 }
 
-/* Scrollbars personalizadas con estilo cyber */
+@keyframes particles-float {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) translateX(10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(10px) translateX(-8px) rotate(240deg);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(360deg);
+  }
+}
+
+/* Scrollbars personalizadas con estilo cyber mejorado */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(240 15% 8% / 0.5);
-  border-radius: 6px;
-  border: 1px solid hsl(270 50% 50% / 0.1);
+  background: hsl(240 15% 8% / 0.6);
+  border-radius: 8px;
+  border: 1px solid hsl(270 50% 50% / 0.15);
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
-    hsl(270 100% 65% / 0.6) 0%,
-    hsl(280 100% 70% / 0.4) 50%,
-    hsl(270 100% 65% / 0.6) 100%
+    hsl(270 100% 65% / 0.7) 0%,
+    hsl(280 100% 70% / 0.5) 50%,
+    hsl(270 100% 65% / 0.7) 100%
   );
-  border-radius: 6px;
-  border: 1px solid hsl(270 100% 65% / 0.3);
+  border-radius: 8px;
+  border: 1px solid hsl(270 100% 65% / 0.4);
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(
     180deg,
-    hsl(270 100% 65% / 0.8) 0%,
-    hsl(280 100% 70% / 0.6) 50%,
-    hsl(270 100% 65% / 0.8) 100%
+    hsl(270 100% 65% / 0.9) 0%,
+    hsl(280 100% 70% / 0.7) 50%,
+    hsl(270 100% 65% / 0.9) 100%
   );
-  box-shadow: 0 0 10px hsl(270 100% 65% / 0.4);
+  box-shadow: 0 0 15px hsl(270 100% 65% / 0.5);
+  transform: scale(1.05);
 }
 
-/* ===== MODAL DE CONFIGURACIÓN 50% CENTRADO ===== */
+/* ===== MODAL DE CONFIGURACIÓN COMO VENTANA SEPARADA Y CENTRADA ===== */
 
-/* Contenedor principal del modal de configuración - CORREGIDO PARA 50% */
+/* Contenedor principal del modal - VENTANA SEPARADA CENTRADA */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] {
-  background: hsl(240 20% 5% / 0.8) !important;
-  backdrop-filter: blur(30px) !important;
+  background: hsl(240 20% 5% / 0.85) !important;
+  backdrop-filter: blur(40px) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 20px !important;
-  animation: modal-fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  padding: 40px !important;
+  animation: modal-fade-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 9999 !important;
 }
 
 @keyframes modal-fade-in {
@@ -1104,179 +1210,185 @@ body,
   }
   to {
     opacity: 1;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(40px);
   }
 }
 
-/* Ventana principal del modal - 50% DEL ANCHO */
+/* Ventana principal del modal - EXACTAMENTE 50% Y CENTRADA */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .standardSidebarView_c25c6d {
   width: 50vw !important;
-  max-width: 800px !important;
-  min-width: 600px !important;
-  height: 70vh !important;
-  max-height: 700px !important;
-  min-height: 500px !important;
-  border-radius: 24px !important;
+  max-width: 900px !important;
+  min-width: 700px !important;
+  height: 75vh !important;
+  max-height: 800px !important;
+  min-height: 600px !important;
+  border-radius: 28px !important;
   overflow: hidden !important;
-  box-shadow: 0 30px 60px -12px hsl(0 0% 0% / 0.7), 0 0 0 1px hsl(270 50% 50% / 0.4), 0 0 80px hsl(270 100% 65% / 0.3) !important;
-  background: hsl(240 15% 8% / 0.8) !important;
-  backdrop-filter: blur(25px) !important;
+  box-shadow: 0 40px 80px -12px hsl(0 0% 0% / 0.8), 0 0 0 2px hsl(270 50% 50% / 0.5), 0 0 100px hsl(270 100% 65% / 0.4) !important;
+  background: hsl(240 15% 8% / 0.9) !important;
+  backdrop-filter: blur(30px) !important;
   position: relative !important;
-  animation: modal-scale-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  animation: modal-scale-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
   font-family: "JetBrains Mono", monospace !important;
+  border: 2px solid hsl(270 100% 65% / 0.3) !important;
 }
 
 @keyframes modal-scale-in {
   from {
-    transform: scale(0.7) translateY(30px);
+    transform: scale(0.6) translateY(50px) rotateX(15deg);
     opacity: 0;
   }
   to {
-    transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0) rotateX(0deg);
     opacity: 1;
   }
 }
 
-/* Barra lateral de navegación */
+/* Barra lateral de navegación - MEJORADA */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .sidebarRegion_c25c6d {
-  width: 240px !important;
-  background: hsl(240 15% 6% / 0.9) !important;
-  border-right: 1px solid hsl(270 50% 50% / 0.3) !important;
-  backdrop-filter: blur(20px) !important;
+  width: 260px !important;
+  background: hsl(240 15% 6% / 0.95) !important;
+  border-right: 2px solid hsl(270 50% 50% / 0.4) !important;
+  backdrop-filter: blur(25px) !important;
   position: relative !important;
 }
 
-/* Efecto de glow en la barra lateral - MEJORADO */
+/* Efecto de glow en la barra lateral - ULTRA MEJORADO */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .sidebarRegion_c25c6d::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
-  width: 2px;
+  width: 3px;
   height: 100%;
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    hsl(270 100% 65% / 0.5) 15%,
-    hsl(280 100% 70% / 0.7) 30%,
-    hsl(270 100% 65% / 0.8) 50%,
-    hsl(280 100% 70% / 0.7) 70%,
-    hsl(270 100% 65% / 0.5) 85%,
+    hsl(270 100% 65% / 0.6) 10%,
+    hsl(280 100% 70% / 0.8) 25%,
+    hsl(270 100% 65% / 1) 50%,
+    hsl(280 100% 70% / 0.8) 75%,
+    hsl(270 100% 65% / 0.6) 90%,
     transparent 100%
   );
-  animation: sidebar-glow 4s infinite ease-in-out;
-  box-shadow: 0 0 20px hsl(270 100% 65% / 0.4);
+  animation: sidebar-glow 5s infinite ease-in-out;
+  box-shadow: 0 0 30px hsl(270 100% 65% / 0.6);
 }
 
 @keyframes sidebar-glow {
   0%,
   100% {
-    opacity: 0.6;
-    filter: blur(1px);
+    opacity: 0.7;
+    filter: blur(2px);
+    transform: scaleY(0.8);
   }
   50% {
     opacity: 1;
     filter: blur(0px);
+    transform: scaleY(1);
   }
 }
 
-/* Elementos de navegación en la sidebar */
+/* Elementos de navegación en la sidebar - ULTRA MEJORADOS */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .side_c25c6d .item_c25c6d {
-  margin: 6px 16px !important;
-  border-radius: 16px !important;
-  padding: 14px 18px !important;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin: 8px 20px !important;
+  border-radius: 20px !important;
+  padding: 16px 22px !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
   position: relative !important;
   overflow: hidden !important;
   background: transparent !important;
   font-family: "JetBrains Mono", monospace !important;
   font-weight: 500 !important;
+  font-size: 14px !important;
 }
 
-/* Elemento seleccionado */
+/* Elemento seleccionado - EFECTO HOLOGRÁFICO */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .side_c25c6d .item_c25c6d.selected_c25c6d {
-  background: hsl(270 100% 65% / 0.18) !important;
-  color: hsl(270 100% 85%) !important;
-  box-shadow: 0 0 25px hsl(270 100% 65% / 0.4), inset 0 1px 0 hsl(270 100% 75% / 0.3) !important;
-  transform: translateX(6px) scale(1.02) !important;
-  backdrop-filter: blur(15px) !important;
-  border: 1px solid hsl(270 100% 65% / 0.3) !important;
-}
-
-/* Efecto de hover */
-#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .side_c25c6d .item_c25c6d:hover:not(.selected_c25c6d) {
-  background: hsl(270 50% 50% / 0.12) !important;
-  transform: translateX(4px) scale(1.01) !important;
-  box-shadow: 0 6px 20px hsl(270 100% 65% / 0.15) !important;
-  backdrop-filter: blur(8px) !important;
-  border: 1px solid hsl(270 50% 50% / 0.2) !important;
-}
-
-/* Área de contenido principal */
-#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .contentRegion_c25c6d {
-  background: hsl(240 12% 12% / 0.7) !important;
+  background: hsl(270 100% 65% / 0.2) !important;
+  color: hsl(270 100% 90%) !important;
+  box-shadow: 0 0 35px hsl(270 100% 65% / 0.5), inset 0 2px 0 hsl(270 100% 75% / 0.4) !important;
+  transform: translateX(8px) scale(1.03) !important;
   backdrop-filter: blur(20px) !important;
-  position: relative !important;
+  border: 2px solid hsl(270 100% 65% / 0.4) !important;
+  animation: hologram-flicker 3s infinite ease-in-out !important;
 }
 
-/* Header del contenido */
-#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .toolsContainer_c25c6d {
-  background: hsl(240 12% 10% / 0.8) !important;
+/* Efecto de hover - MEJORADO */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .side_c25c6d .item_c25c6d:hover:not(.selected_c25c6d) {
+  background: hsl(270 50% 50% / 0.15) !important;
+  transform: translateX(6px) scale(1.02) !important;
+  box-shadow: 0 8px 25px hsl(270 100% 65% / 0.2) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 2px solid hsl(270 50% 50% / 0.3) !important;
+}
+
+/* Área de contenido principal - MEJORADA */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .contentRegion_c25c6d {
+  background: hsl(240 12% 12% / 0.8) !important;
   backdrop-filter: blur(25px) !important;
-  border-bottom: 1px solid hsl(270 50% 50% / 0.3) !important;
-  padding: 24px 28px !important;
   position: relative !important;
 }
 
-/* Título del header */
-#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .toolsContainer_c25c6d h1 {
-  color: hsl(270 100% 85%) !important;
-  font-weight: 700 !important;
-  font-family: "JetBrains Mono", monospace !important;
-  text-shadow: 0 0 15px hsl(270 100% 65% / 0.4) !important;
-  font-size: 24px !important;
+/* Header del contenido - MEJORADO */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .toolsContainer_c25c6d {
+  background: hsl(240 12% 10% / 0.9) !important;
+  backdrop-filter: blur(30px) !important;
+  border-bottom: 2px solid hsl(270 50% 50% / 0.4) !important;
+  padding: 28px 32px !important;
+  position: relative !important;
 }
 
-/* Botón de cerrar mejorado */
+/* Título del header - EFECTO CYBER */
+#app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .toolsContainer_c25c6d h1 {
+  color: hsl(270 100% 90%) !important;
+  font-weight: 800 !important;
+  font-family: "JetBrains Mono", monospace !important;
+  text-shadow: 0 0 20px hsl(270 100% 65% / 0.6) !important;
+  font-size: 28px !important;
+  animation: neon-flicker 6s infinite ease-in-out !important;
+}
+
+/* Botón de cerrar - ULTRA MEJORADO */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .closeButton_c25c6d {
-  width: 44px !important;
-  height: 44px !important;
+  width: 48px !important;
+  height: 48px !important;
   border-radius: 50% !important;
-  background: hsl(0 85% 65% / 0.15) !important;
-  border: 2px solid hsl(0 85% 65% / 0.4) !important;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: hsl(0 85% 65% / 0.2) !important;
+  border: 3px solid hsl(0 85% 65% / 0.5) !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(20px) !important;
 }
 
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .closeButton_c25c6d:hover {
-  background: hsl(0 85% 65% / 0.25) !important;
-  border-color: hsl(0 85% 65% / 0.6) !important;
-  box-shadow: 0 0 30px hsl(0 85% 65% / 0.5) !important;
-  transform: scale(1.15) rotate(90deg) !important;
+  background: hsl(0 85% 65% / 0.3) !important;
+  border-color: hsl(0 85% 65% / 0.8) !important;
+  box-shadow: 0 0 40px hsl(0 85% 65% / 0.7) !important;
+  transform: scale(1.2) rotate(180deg) !important;
 }
 
-/* Contenido scrolleable */
+/* Contenido scrolleable - MEJORADO */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .contentColumn_c25c6d {
-  padding: 28px !important;
+  padding: 32px !important;
   background: transparent !important;
   font-family: "JetBrains Mono", monospace !important;
 }
 
-/* Scrollbar personalizada para el modal */
+/* Scrollbar personalizada para el modal - MEJORADA */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .contentRegion_c25c6d .scrollerBase_c25c6d::-webkit-scrollbar {
-  width: 10px !important;
+  width: 12px !important;
 }
 
 #app-mount
   .layer_ec16dd[aria-label*="USER_SETTINGS"]
   .contentRegion_c25c6d
   .scrollerBase_c25c6d::-webkit-scrollbar-track {
-  background: hsl(240 15% 8% / 0.6) !important;
-  border-radius: 5px !important;
-  border: 1px solid hsl(270 50% 50% / 0.2) !important;
+  background: hsl(240 15% 8% / 0.7) !important;
+  border-radius: 6px !important;
+  border: 1px solid hsl(270 50% 50% / 0.3) !important;
 }
 
 #app-mount
@@ -1285,12 +1397,12 @@ body,
   .scrollerBase_c25c6d::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
-    hsl(270 100% 65% / 0.6) 0%,
-    hsl(280 100% 70% / 0.4) 50%,
-    hsl(270 100% 65% / 0.6) 100%
+    hsl(270 100% 65% / 0.8) 0%,
+    hsl(280 100% 70% / 0.6) 50%,
+    hsl(270 100% 65% / 0.8) 100%
   ) !important;
-  border-radius: 5px !important;
-  border: 1px solid hsl(270 100% 65% / 0.3) !important;
+  border-radius: 6px !important;
+  border: 1px solid hsl(270 100% 65% / 0.4) !important;
   transition: all 0.3s ease !important;
 }
 
@@ -1298,100 +1410,98 @@ body,
   .layer_ec16dd[aria-label*="USER_SETTINGS"]
   .contentRegion_c25c6d
   .scrollerBase_c25c6d::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    180deg,
-    hsl(270 100% 65% / 0.8) 0%,
-    hsl(280 100% 70% / 0.6) 50%,
-    hsl(270 100% 65% / 0.8) 100%
-  ) !important;
-  box-shadow: 0 0 15px hsl(270 100% 65% / 0.5) !important;
+  background: linear-gradient(180deg, hsl(270 100% 65% / 1) 0%, hsl(280 100% 70% / 0.8) 50%, hsl(270 100% 65% / 1) 100%) !important;
+  box-shadow: 0 0 20px hsl(270 100% 65% / 0.6) !important;
 }
 
-/* Botones mejorados */
+/* Botones mejorados - ULTRA CYBER */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85 {
-  border-radius: 16px !important;
-  padding: 14px 28px !important;
-  font-weight: 600 !important;
+  border-radius: 20px !important;
+  padding: 16px 32px !important;
+  font-weight: 700 !important;
   font-family: "JetBrains Mono", monospace !important;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
   position: relative !important;
   overflow: hidden !important;
-  backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(20px) !important;
+  font-size: 14px !important;
 }
 
-/* Botón primario */
+/* Botón primario - HOLOGRÁFICO */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85.lookFilled_dd4f85.colorBrand_dd4f85 {
   background: linear-gradient(135deg, hsl(270 100% 65%) 0%, hsl(280 100% 70%) 100%) !important;
   border: none !important;
-  box-shadow: 0 6px 20px hsl(270 100% 65% / 0.5) !important;
+  box-shadow: 0 8px 25px hsl(270 100% 65% / 0.6) !important;
 }
 
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85.lookFilled_dd4f85.colorBrand_dd4f85:hover {
-  transform: translateY(-3px) scale(1.05) !important;
-  box-shadow: 0 12px 35px hsl(270 100% 65% / 0.6) !important;
+  transform: translateY(-4px) scale(1.08) !important;
+  box-shadow: 0 15px 45px hsl(270 100% 65% / 0.8) !important;
+  animation: hologram-flicker 2s infinite ease-in-out !important;
 }
 
-/* Botón secundario */
+/* Botón secundario - CYBER OUTLINE */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85.lookOutlined_dd4f85 {
-  border: 2px solid hsl(270 100% 65% / 0.5) !important;
-  color: hsl(270 100% 85%) !important;
-  background: hsl(270 100% 65% / 0.08) !important;
+  border: 3px solid hsl(270 100% 65% / 0.6) !important;
+  color: hsl(270 100% 90%) !important;
+  background: hsl(270 100% 65% / 0.1) !important;
 }
 
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .button_dd4f85.lookOutlined_dd4f85:hover {
-  background: hsl(270 100% 65% / 0.15) !important;
-  border-color: hsl(270 100% 65% / 0.7) !important;
-  box-shadow: 0 0 25px hsl(270 100% 65% / 0.4) !important;
-  transform: scale(1.03) !important;
+  background: hsl(270 100% 65% / 0.2) !important;
+  border-color: hsl(270 100% 65% / 0.9) !important;
+  box-shadow: 0 0 35px hsl(270 100% 65% / 0.5) !important;
+  transform: scale(1.05) !important;
 }
 
-/* Cards y secciones */
+/* Cards y secciones - ULTRA MEJORADAS */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .accountProfileCard_c25c6d,
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .userSettingsAccount_c25c6d > div {
-  background: hsl(240 15% 10% / 0.5) !important;
-  border: 1px solid hsl(270 50% 50% / 0.3) !important;
-  border-radius: 20px !important;
-  padding: 24px !important;
-  margin-bottom: 24px !important;
-  backdrop-filter: blur(20px) !important;
-  transition: all 0.4s ease !important;
+  background: hsl(240 15% 10% / 0.6) !important;
+  border: 2px solid hsl(270 50% 50% / 0.4) !important;
+  border-radius: 24px !important;
+  padding: 28px !important;
+  margin-bottom: 28px !important;
+  backdrop-filter: blur(25px) !important;
+  transition: all 0.5s ease !important;
 }
 
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .accountProfileCard_c25c6d:hover,
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .userSettingsAccount_c25c6d > div:hover {
-  border-color: hsl(270 50% 50% / 0.5) !important;
-  box-shadow: 0 12px 40px hsl(270 100% 65% / 0.15) !important;
-  transform: translateY(-4px) !important;
-  background: hsl(240 15% 12% / 0.6) !important;
+  border-color: hsl(270 50% 50% / 0.7) !important;
+  box-shadow: 0 15px 50px hsl(270 100% 65% / 0.2) !important;
+  transform: translateY(-6px) !important;
+  background: hsl(240 15% 12% / 0.7) !important;
 }
 
-/* Inputs mejorados */
+/* Inputs mejorados - CYBER STYLE */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .inputDefault_f8bc55 {
-  background: hsl(240 15% 8% / 0.7) !important;
-  border: 2px solid hsl(270 50% 50% / 0.3) !important;
-  border-radius: 16px !important;
-  padding: 14px 18px !important;
+  background: hsl(240 15% 8% / 0.8) !important;
+  border: 3px solid hsl(270 50% 50% / 0.4) !important;
+  border-radius: 20px !important;
+  padding: 16px 22px !important;
   color: hsl(0 0% 95%) !important;
   font-family: "JetBrains Mono", monospace !important;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  backdrop-filter: blur(15px) !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(20px) !important;
+  font-size: 14px !important;
 }
 
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .inputDefault_f8bc55:focus {
   border-color: hsl(270 100% 65%) !important;
-  box-shadow: 0 0 0 4px hsl(270 100% 65% / 0.25), 0 0 30px hsl(270 100% 65% / 0.4) !important;
-  background: hsl(240 15% 10% / 0.8) !important;
-  transform: scale(1.02) !important;
+  box-shadow: 0 0 0 5px hsl(270 100% 65% / 0.3), 0 0 40px hsl(270 100% 65% / 0.5) !important;
+  background: hsl(240 15% 10% / 0.9) !important;
+  transform: scale(1.03) !important;
 }
 
-/* Dividers */
+/* Dividers - CYBER GLOW */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .divider_c25c6d {
-  border-color: hsl(270 50% 50% / 0.3) !important;
-  margin: 28px 0 !important;
-  box-shadow: 0 0 10px hsl(270 100% 65% / 0.1) !important;
+  border-color: hsl(270 50% 50% / 0.4) !important;
+  margin: 32px 0 !important;
+  box-shadow: 0 0 15px hsl(270 100% 65% / 0.2) !important;
 }
 
-/* Efectos de partículas en el fondo del modal */
+/* Efectos de partículas en el fondo del modal - MEJORADOS */
 #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .standardSidebarView_c25c6d::after {
   content: "";
   position: absolute;
@@ -1399,43 +1509,44 @@ body,
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 15% 15%, hsl(270 100% 65% / 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 85% 85%, hsl(280 100% 70% / 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 50% 30%, hsl(260 100% 60% / 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 30% 70%, hsl(290 100% 75% / 0.03) 0%, transparent 50%);
+  background: radial-gradient(circle at 10% 10%, hsl(270 100% 65% / 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 90% 90%, hsl(280 100% 70% / 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 20%, hsl(260 100% 60% / 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, hsl(290 100% 75% / 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, hsl(270 100% 65% / 0.03) 0%, transparent 50%);
   pointer-events: none;
-  animation: particles-float 30s infinite linear;
+  animation: particles-float 40s infinite linear;
 }
 
-/* Responsive para pantallas más pequeñas */
+/* Responsive para pantallas más pequeñas - MEJORADO */
 @media (max-width: 1400px) {
   #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .standardSidebarView_c25c6d {
     width: 60vw !important;
-    min-width: 500px !important;
+    min-width: 600px !important;
   }
 }
 
 @media (max-width: 1000px) {
   #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .standardSidebarView_c25c6d {
     width: 80vw !important;
-    min-width: 400px !important;
+    min-width: 500px !important;
   }
 
   #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .sidebarRegion_c25c6d {
-    width: 200px !important;
+    width: 220px !important;
   }
 }
 
 @media (max-width: 768px) {
   #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .standardSidebarView_c25c6d {
     width: 95vw !important;
-    height: 85vh !important;
-    border-radius: 20px !important;
-    min-width: 300px !important;
+    height: 90vh !important;
+    border-radius: 24px !important;
+    min-width: 400px !important;
   }
 
   #app-mount .layer_ec16dd[aria-label*="USER_SETTINGS"] .sidebarRegion_c25c6d {
-    width: 180px !important;
+    width: 200px !important;
   }
 }
 
